@@ -10,7 +10,7 @@
     
     <title>
         
-            微信小程序 | 
+            快速完成夜间模式 | 
         
         你若盛开，清风自来
     </title>
@@ -27,7 +27,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="daisyNew">
     <meta name="description" content="null">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,夜间模式 iOS">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -48,9 +48,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="微信小程序 | 你若盛开，清风自来">
+    <meta property="og:title" content="快速完成夜间模式 | 你若盛开，清风自来">
     <meta property="og:description" content="null">
-    
+    <meta property="og:article:tag" content="夜间模式 iOS"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -234,7 +234,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小程序与APP"><span class="post-toc-number">2.</span> <span class="post-toc-text">小程序与APP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小程序开发"><span class="post-toc-number">3.</span> <span class="post-toc-text">小程序开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小程序初始化"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">小程序初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建文件"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">创建文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开发过程中遇到的坑"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">开发过程中遇到的坑</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入"><span class="post-toc-number">1.</span> <span class="post-toc-text">导入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#切换模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">切换模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义个控件的不同模式"><span class="post-toc-number">3.</span> <span class="post-toc-text">自定义个控件的不同模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UILabel字体颜色"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">UILabel字体颜色</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UIButton"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">UIButton</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现原理"><span class="post-toc-number">4.</span> <span class="post-toc-text">实现原理</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -270,7 +270,7 @@
         
     
             <p class="article-headline-p">
-                微信小程序
+                快速完成夜间模式
             </p>
         </div>
 
@@ -289,7 +289,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>daisyNew</strong>
-        <span>12月 14, 2016</span>
+        <span>2月 24, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -313,7 +313,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/夜间模式-iOS/">夜间模式 iOS</a>
     </ul>
     
 
@@ -367,38 +367,36 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><img src="http://img.mp.itc.cn/upload/20161228/bb0da180ff7245cdac00c9bad8bc81ec.png" alt="微信 icon"></p>
-<p>最近微信小程序大热，我又从一名iOS开发转战到小程序啦，真成了社会主义的一板砖，哪里需要哪里搬！废话不多说，一下是小程序的一些介绍以及开发遇坑的解决办法。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>微信小程序</strong>,是一种无需下载，扫一扫或者搜一搜就可以打开的应用，充分体现了微信”触手可及、用完即走”的理念。 </p>
-<h2 id="小程序与APP"><a href="#小程序与APP" class="headerlink" title="小程序与APP"></a>小程序与APP</h2><ul>
-<li>小程序无需安装，APP需从相关应用市场下载。</li>
-<li>小程序类似于webApp,基于微信，APP相对独立。</li>
-<li>小程序目前还不成熟，很多APP支持的功能，小程序不支持，且部分功能有限。</li>
-</ul>
-<h2 id="小程序开发"><a href="#小程序开发" class="headerlink" title="小程序开发"></a>小程序开发</h2><p>小程序有一套官方提供的控件与API，且官网有提供开发文档及相关demo，但文档尚不完善，很多地方没有覆盖。开发工具也不太成熟，导致开发中有一定的难度。</p>
-<h3 id="小程序初始化"><a href="#小程序初始化" class="headerlink" title="小程序初始化"></a>小程序初始化</h3><p>通常初始化的小程序都包含如下三个文件：</p>
-<ul>
-<li>.js 为脚本文件。这个文件用于坚挺并处理小程序的生命周期函数、生命全局变量。</li>
-<li>.json是配置文件。这个文件是对整个小程序的全局配置。这个文件不能添加任何注释。</li>
-<li>.wxss是样式表文件。这个文件是整个小程序的公共样式表。我们可以在页面组件的class属性上直接使用app.wxss中声明的样式规则。</li>
-</ul>
-<p>小程序会读取以上文件，并生成小程序实例。</p>
-<h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><p>初始化小程序之后，我们就需要给小程序添加我们需要实现的功能了，那么第一步就是创建文件。</p>
-<p>创建文件时，文件夹名以及内部文件名需要一致，便于微信找到对应的文件进行渲染。</p>
-<p>创建完毕之后，别忘了将该页面的【路径+页面名】写在app.json的pages中，如果你的小程序有tabbar，那tabbar的几个页面一定要按顺序些哦。</p>
-<p>每一个小程序页面由四个不同后缀名的文件组成。如：</p>
-<ul>
-<li>.js 脚本文件</li>
-<li>.json 配置文件</li>
-<li>.wxss 样式表文件，用css来规范页面样式，但是有些css小程序不支持。</li>
-<li>.wxml  页面结构文件，用于完成页面结构的设置。</li>
-</ul>
-<h3 id="开发过程中遇到的坑"><a href="#开发过程中遇到的坑" class="headerlink" title="开发过程中遇到的坑"></a>开发过程中遇到的坑</h3><ol>
-<li>微信api尚不完善，所以在开发过程中需要使用js来编写，但是有些js这里面是不支持的。比如在小程序中不能使用window对象，微信解释说：页面的脚本逻辑是在JsCore中运行的，JsCore是一个没有窗口对象的环境，所以不能在脚本中使用window，也无法在脚本中操作组件。</li>
-<li>缓存、下载的文件大小有限制。</li>
-<li>无法跳转外链，在我完成小程序的期间不能分享，不过现在可以分享了。</li>
-<li>网络请求必须支持HTTPS，且相关域名需要去小程序后台进行配置，只有配置过得才可以正常使用，不过一个月最多可以配置三次，多了就不可以了。</li>
-</ol>
+        <p>接手了一个已经迭代了好多版本的APP，加了新需求，即加入夜间模式。这个app架构不是很好，正纠结是不是要大动代码的时候，发现了一个可用的第三方，使用起来真是快速又方便。</p>
+<p>就是这个了——- DKNightVersion</p>
+<p>下载地址: <a href="https://github.com/Draveness/DKNightVersion" target="_blank" rel="external">https://github.com/Draveness/DKNightVersion</a></p>
+<p>集成步骤作者已经给出，集成过程中我也没有遇到坑，所以就不再说了，主要说说使用方法：</p>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p>因为改变夜间模式还是需要全局使用的，所以我在.pch文件里导入头文件</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"DKNightVersion.h"</span></span></div></pre></td></tr></table></figure>
+<h2 id="切换模式"><a href="#切换模式" class="headerlink" title="切换模式"></a>切换模式</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断当前是否为夜间模式</span></div><div class="line"><span class="keyword">if</span> ([<span class="keyword">self</span>.dk_manager.themeVersion isEqualToString:DKThemeVersionNight]) &#123;</div><div class="line">        <span class="comment">//日间模式</span></div><div class="line">        [<span class="keyword">self</span>.dk_manager dawnComing];</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">         <span class="comment">//夜间模式</span></div><div class="line">        [<span class="keyword">self</span>.dk_manager nightFalling];</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="自定义个控件的不同模式"><a href="#自定义个控件的不同模式" class="headerlink" title="自定义个控件的不同模式"></a>自定义个控件的不同模式</h2><h3 id="UILabel字体颜色"><a href="#UILabel字体颜色" class="headerlink" title="UILabel字体颜色"></a>UILabel字体颜色</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">self</span>.titleLab.dk_textColorPicker    = DKColorPickerWithKey(TEXT);</div><div class="line">``` </div><div class="line"></div><div class="line">这里的TEXT是在该第三方带有的DKColorTable.text文件中设置的，文件目录如下：</div><div class="line"></div><div class="line">DKNightVersion/ColorTable/DKColorTable.text</div><div class="line"></div><div class="line">这里面可以配置一系列的色值：</div></pre></td></tr></table></figure>
+<p> NORMAL   NIGHT    RED</p>
+<p> #ffffff  #343434  #fafafa BG</p>
+<p> #aaaaaa  #313131  #aaaaaa SEP</p>
+<p> #0000ff  #ffffff  #fa0000 TINT</p>
+<p> #000000  #ffffff  #000000 TEXT</p>
+<p> #ffffff  #444444  #ffffff BAR</p>
+<p> #f0f0f0  #222222  #dedede HIGHLIGHTED<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">在这里设置后之后，就可以通过上述那种方法，让系统自己去配置色值啦！</div><div class="line"></div><div class="line">### UIImageview</div><div class="line"></div><div class="line">``` objc</div><div class="line">   self.speedImg.dk_imagePicker = DKImagePickerWithNames(@&quot;oprationSpeed_0&quot;,@&quot;nightoprationSpeed_0&quot;);</div></pre></td></tr></table></figure></p>
+<p>前面是正常模式下的图片，后面是夜间模式下的图片</p>
+<h3 id="UIButton"><a href="#UIButton" class="headerlink" title="UIButton"></a>UIButton</h3><pre><code class="objc"><span class="comment">//设置按钮文字的颜色</span>
+    [<span class="keyword">self</span>.downloadBtn dk_setTitleColorPicker:DKColorPickerWithKey(TEXT) forState:<span class="built_in">UIControlStateNormal</span>];
+<span class="comment">//设置按钮图片</span>
+   [<span class="keyword">self</span>.playBtn dk_setImage:DKImagePickerWithNames(<span class="string">@"newpause.png"</span>,<span class="string">@"nightnewpause.png"</span>) forState:<span class="built_in">UIControlStateNormal</span>];
+</code></pre>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>当我们点击切换主题模式时，就是给单例DKNightVersionManager setTheme,这时该单例会发一个通知给所有设置过DKColorPicker的UI控件，这些控件收到通知之后，得到该单例当前的主题，然后根据当前的主题去更新自己的样子。</p>
+<p>如下为lable更新文字颜色的代码：</p>
+<pre><code class="objc">- (<span class="keyword">void</span>)dk_setTextColorPicker:(DKColorPicker)picker {
+    objc_setAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(dk_textColorPicker), picker, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    <span class="keyword">self</span>.textColor = picker(<span class="keyword">self</span>.dk_manager.themeVersion);
+    [<span class="keyword">self</span>.pickers setValue:[picker <span class="keyword">copy</span>] forKey:<span class="string">@"setTextColor:"</span>];
+}
+</code></pre>
+<p>可见：label收到通知，知道当前更新为夜间模式之后，他会去找对应夜间模式的字体颜色，也就是说我们在DKColorTable.text中设置的色值和这些模式是一一对应的，找到之后，label更新为夜间模式的颜色。</p>
 
     
 
@@ -422,21 +420,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/02/24/快速完成夜间模式/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/11/14/更新cocoapods/" id="post_nav-older" class="next-content">
+        <a href="/2016/12/14/微信小程序/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
