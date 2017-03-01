@@ -10,8 +10,6 @@
     
     <title>
         
-            ceshi | 
-        
         黑暗中前行
     </title>
 
@@ -48,7 +46,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ceshi | 黑暗中前行">
+    <meta property="og:title" content="黑暗中前行">
     <meta property="og:description" content="null">
     
 
@@ -234,7 +232,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#动态获取WebViewCell的高度"><span class="post-toc-number">1.</span> <span class="post-toc-text">动态获取WebViewCell的高度</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -270,7 +268,7 @@
         
     
             <p class="article-headline-p">
-                ceshi
+                
             </p>
         </div>
 
@@ -289,7 +287,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>daisyNew</strong>
-        <span>3月 01, 2017</span>
+        <span>1月 16, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -340,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ceshi&url=http://yoursite.com//2017/03/01/ceshi/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com//2017/01/16/动态获取webviewcell的高度/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -349,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ceshi&url=http://yoursite.com//2017/03/01/ceshi/index.html&via=daisyNew" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com//2017/01/16/动态获取webviewcell的高度/index.html&via=daisyNew" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -358,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/03/01/ceshi/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/01/16/动态获取webviewcell的高度/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -367,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/03/01/ceshi/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/01/16/动态获取webviewcell的高度/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -391,7 +389,25 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p> vcx cx x b</p>
+        <h1 id="动态获取WebViewCell的高度"><a href="#动态获取WebViewCell的高度" class="headerlink" title="动态获取WebViewCell的高度"></a>动态获取WebViewCell的高度</h1><p>WebView<br>上个月接手了一个资讯类项目，详情页中部嵌入了一个webViewCell(即，tableViewCell的contentView铺满了WebView)。</p>
+<p>接手的时候该页已经完成。之前的开发人员逻辑是：在webView的代理方法：-(void)webViewDidFinishLoad:(UIWebView *)webView中获取webView的高度，然后赋值刷新表。</p>
+<p>但是，这样会出现webview高度加载不正确，经常会有webView看起来被截断的问题。于是换成KVO来监听webView.scrollView的ContentSize，动态改变webView的高度。具体实现如下：</p>
+<p>webView初始化的时候添加监听</p>
+<p>1<br>[self.webView.scrollView addObserver:self forKeyPath:@”contentSize” options:NSKeyValueObservingOptionNew context:nil];<br>实现监听的方法</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</p>
+<ul>
+<li>(void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(NSDictionary&lt;NSString </em>,id&gt; <em>)change context:(void </em>)context{<br>  if ([keyPath isEqualToString:@”contentSize”]) {<pre><code>CGFloat height = [[_webView stringByEvaluatingJavaScriptFromString:@&quot;document.body.offsetHeight&quot;] floatValue];
+CGRect rect = self.webView.frame;
+rect.size.height = height ;
+self.webView.frame = rect;
+[self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+</code></pre>  }<br>}<br>注意：获取到高度之后，最好只刷新需要刷新的那一行，不要整个刷新。</li>
+</ul>
+<p>不要忘了移除监听</p>
+<p>1<br>2<br>3<br>4</p>
+<ul>
+<li>(void)viewWillDisappear:(BOOL)animated{<br>  [super viewWillDisappear:animated];<br>  [_webView.scrollView removeObserver:self forKeyPath:@”contentSize” context:nil];<br>}</li>
+</ul>
 
     
 
@@ -415,13 +431,21 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2017/03/01/hello-world/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/03/01/hello-world/" id="post_nav-older" class="next-content">
+        <a href="/2017/01/16/苹果指纹解锁/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

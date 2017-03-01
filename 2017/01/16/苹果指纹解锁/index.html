@@ -10,8 +10,6 @@
     
     <title>
         
-            ceshi | 
-        
         黑暗中前行
     </title>
 
@@ -48,7 +46,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ceshi | 黑暗中前行">
+    <meta property="og:title" content="黑暗中前行">
     <meta property="og:description" content="null">
     
 
@@ -234,7 +232,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#苹果指纹解锁"><span class="post-toc-number">1.</span> <span class="post-toc-text">苹果指纹解锁</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -270,7 +268,7 @@
         
     
             <p class="article-headline-p">
-                ceshi
+                
             </p>
         </div>
 
@@ -289,7 +287,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>daisyNew</strong>
-        <span>3月 01, 2017</span>
+        <span>1月 16, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -340,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ceshi&url=http://yoursite.com//2017/03/01/ceshi/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com//2017/01/16/苹果指纹解锁/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -349,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ceshi&url=http://yoursite.com//2017/03/01/ceshi/index.html&via=daisyNew" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com//2017/01/16/苹果指纹解锁/index.html&via=daisyNew" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -358,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/03/01/ceshi/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/01/16/苹果指纹解锁/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -367,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/03/01/ceshi/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/01/16/苹果指纹解锁/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -391,7 +389,85 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p> vcx cx x b</p>
+        <h1 id="苹果指纹解锁"><a href="#苹果指纹解锁" class="headerlink" title="苹果指纹解锁"></a>苹果指纹解锁</h1><p>指纹解锁<br>苹果的指纹解锁出来好一阵子了，但是一直没用上，所以没有研究，今天偶遇一篇关于这个的文章，所以记录一下，便于以后使用。</p>
+<p>实现过程如下：</p>
+<p>导入头文件</p>
+<p>1</p>
+<p>#import <localauthentication localauthentication.h=""><br>在程序启动时，进行设置</localauthentication></p>
+<p>因为指纹解锁只在iOS 8.0以上有，所以当设备满足此需求时，就开启指纹锁，否则不需要开启。</p>
+<p>1<br>2<br>3<br>if ([UIDevice currentDevice].systemVersion.floatValue &lt; 8.0) {<br>    return;<br>}<br>具体方法实现如下：</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78</p>
+<ul>
+<li>(void)evaluateAuthenticate{<br>  //创建LAContext<br>  LAContext <em>context = [[LAContext alloc]init];<br>  NSError </em>error = nil;<br>  NSString *result  = @”请验证指纹！”;<br>  //首先使用canevatePolicy 判断设备状态<br>  if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&amp;error]) {<pre><code>//支持指纹验证
+[context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:result reply:^(BOOL success, NSError * _Nullable error) { 
+    if (success) {
+     //成功后的处理办法   
+    }else{
+        switch (error.code) {
+            case LAErrorSystemCancel:
+            {
+                //系统取消授权，如其他app切入
+                break;
+            }
+            case LAErrorUserCancel:
+            {
+                //用户取消验证Touch ID
+                break;
+            }
+            case LAErrorAuthenticationFailed:
+            {
+                //授权失败
+                break;
+            }
+            case LAErrorPasscodeNotSet:
+            {
+                //系统未设置密码
+                break;
+            }
+            case LAErrorTouchIDNotAvailable:
+            {
+                //设备Touch ID 不可用，例如未打开
+                break;
+            }
+            case LAErrorTouchIDNotEnrolled:
+            {
+                //设备Touch ID 不可用，用户未录入
+                break;
+            }
+            case LAErrorUserFallback:
+            {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                  //用户选择输入密码，切换主线程处理
+                }];
+                break;
+            }
+            default:
+            {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    //其他情况，切换主线程处理
+                }];
+                break;
+            }
+        }
+    }
+}];
+</code></pre>  }else{<pre><code>//不支持指纹识别
+switch (error.code) {
+    case LAErrorTouchIDNotEnrolled:
+    {
+        break;
+    }
+    case LAErrorPasscodeNotSet:
+    {
+        break;
+    }
+    default:
+    {
+        break;
+    }
+}
+</code></pre>  }<br>}</li>
+</ul>
 
     
 
@@ -415,13 +491,21 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2017/01/16/动态获取webviewcell的高度/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/03/01/hello-world/" id="post_nav-older" class="next-content">
+        <a href="/2017/01/16/oc_面试基础（一）/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

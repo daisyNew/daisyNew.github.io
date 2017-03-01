@@ -10,8 +10,6 @@
     
     <title>
         
-            ceshi | 
-        
         黑暗中前行
     </title>
 
@@ -48,7 +46,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ceshi | 黑暗中前行">
+    <meta property="og:title" content="黑暗中前行">
     <meta property="og:description" content="null">
     
 
@@ -234,7 +232,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#App-内直接下载应用，不用跳转到App-Store"><span class="post-toc-number">1.</span> <span class="post-toc-text">App 内直接下载应用，不用跳转到App Store</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -270,7 +268,7 @@
         
     
             <p class="article-headline-p">
-                ceshi
+                
             </p>
         </div>
 
@@ -289,7 +287,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>daisyNew</strong>
-        <span>3月 01, 2017</span>
+        <span>1月 16, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -340,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ceshi&url=http://yoursite.com//2017/03/01/ceshi/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com//2017/01/16/app_内直接下载应用，不用跳转到app_store/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -349,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ceshi&url=http://yoursite.com//2017/03/01/ceshi/index.html&via=daisyNew" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com//2017/01/16/app_内直接下载应用，不用跳转到app_store/index.html&via=daisyNew" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -358,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/03/01/ceshi/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/01/16/app_内直接下载应用，不用跳转到app_store/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -367,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/03/01/ceshi/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/01/16/app_内直接下载应用，不用跳转到app_store/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -391,7 +389,16 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p> vcx cx x b</p>
+        <h1 id="App-内直接下载应用，不用跳转到App-Store"><a href="#App-内直接下载应用，不用跳转到App-Store" class="headerlink" title="App 内直接下载应用，不用跳转到App Store"></a>App 内直接下载应用，不用跳转到App Store</h1><p>一般情况下，我们要下载某一个应用时，都需要先跳转到app store中对应应用的页面，然后再进行下载。iOS 6之后，苹果提出，也可以直接在app中调起下载页面进行下载，不需要再跳转了，这对于浏览器应用来说可谓是一个福利啊！下面我们来看看这个功能怎么实现：</p>
+<p>主要涉及到一个类：SKStoreProductViewController,这个类继承自UIViewController，基本用法与UIViewController相同。话不多说，请看代码：</p>
+<p>1、首先需要导入库</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">   <span class="meta">#import <span class="meta-string">&lt; StoreKit/StoreKit.h &gt;</span></span></div><div class="line">``` </div><div class="line"> </div><div class="line"><span class="number">2</span>、实现代理</div><div class="line"></div><div class="line">``` objc</div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span>() &lt; <span class="title">SKStoreProductViewControllerDelegate</span> &gt;</span></div><div class="line"> ``` </div><div class="line"></div><div class="line"><span class="number">3</span>、点击下载按钮触发的方法：</div><div class="line"></div><div class="line">``` objc</div><div class="line">   - (<span class="keyword">void</span>)showStoreInApp:(<span class="built_in">NSString</span> *)appid&#123;</div><div class="line">   Class isAllow = <span class="built_in">NSClassFromString</span>(<span class="string">@"SKStoreProductViewController"</span>);</div><div class="line">   <span class="keyword">if</span> (isAllow != <span class="literal">nil</span>) &#123;</div><div class="line">      <span class="built_in">SKStoreProductViewController</span> *skStoreProductViewController = [[<span class="built_in">SKStoreProductViewController</span> alloc]init];</div><div class="line">      skStoreProductViewController.delegate = <span class="keyword">self</span>;</div><div class="line">     [skStoreProductViewController loadProductWithParameters:@&#123;<span class="built_in">SKStoreProductParameterITunesItemIdentifier</span>:appID&#125; </div><div class="line">      completionBlock:^(<span class="built_in">BOOL</span> result, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line">        <span class="keyword">if</span> (result) &#123;</div><div class="line">           [<span class="keyword">self</span> presentViewController:skStoreProductViewController                          </div><div class="line">                              animated:<span class="literal">YES</span> </div><div class="line">                            completion:<span class="literal">nil</span>];</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">           <span class="built_in">NSLog</span>(<span class="string">@"error==%@"</span>,error);</div><div class="line">        &#125;</div><div class="line">      &#125;];</div><div class="line">   &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="built_in">NSString</span> *string = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"itms-apps://itunes.apple.com/us/app/id%@?mt=8"</span>,appID];</div><div class="line">      [[<span class="built_in">UIApplication</span> sharedApplication]openURL:[<span class="built_in">NSURL</span> URLWithString:string]];</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4、点击取消按钮出发的方法：</p>
+<pre><code class="objc">- (<span class="keyword">void</span>)productViewControllerDidFinish:(<span class="built_in">SKStoreProductViewController</span> *)viewController{
+    [viewController dismissViewControllerAnimated:<span class="literal">YES</span>
+                                       completion:<span class="literal">nil</span>];
+}
+</code></pre>
 
     
 
@@ -415,13 +422,21 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2017/01/16/cocoapods的安装和使用/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/03/01/hello-world/" id="post_nav-older" class="next-content">
+        <a href="/2017/01/16/react_native开始/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
