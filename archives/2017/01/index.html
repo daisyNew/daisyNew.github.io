@@ -237,7 +237,14 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            动态获取WebViewCell的高度WebView上个月接手了一个资讯类项目，详情页中部嵌入了一个webViewCell(即，tableViewCell的...
+            动态获取WebViewCell的高度WebView上个月接手了一个资讯类项目，详情页中部嵌入了一个webViewCell(即，tableViewCell的contentView铺满了WebView)。
+接手的时候该页已经完成。之前的开发人员逻辑是：在webView的代理方法：-(void)webViewDidFinishLoad:(UIWebView *)webView中获取webView的高度，然后赋值刷新表。
+但是，这样会出现webview高度加载不正确，经常会有webView看起来被截断的问题。于是换成KVO来监听webView.scrollView的ContentSize，动态改变webView的高度。具体实现如下：
+webView初始化的时候添加监听
+1[self.webView.scrollView addObserver:self forKeyPath:@”contentSize” options:NSKeyValueObservingOptionNew context:nil];实现监听的方法
+123456789
+
+(void)observeValueForKeyPath:(NSString )keyPath ofObject:(id)object change:(NSDictionary&lt;NSString ,id&gt; )change context:(void )context{  if ([keyPath isEqualToString:@”contentSize”]) {CGFloat height = [[_webView stringByEvaluatingJavaScriptFromString:@&quot;document.body.offsetH...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -298,7 +305,12 @@
 实现过程如下：
 导入头文件
 1
-...
+#import 在程序启动时，进行设置
+因为指纹解锁只在iOS 8.0以上有，所以当设备满足此需求时，就开启指纹锁，否则不需要开启。
+123if ([UIDevice currentDevice].systemVersion.floatValue &lt; 8.0) {    return;}具体方法实现如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778
+
+(void)evaluateAuthenticate{  //创建LAContext  LACon...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -358,7 +370,24 @@
             OC 面试基础（一）面试什么是OC?
 OC 即Objective-C，他是在C的基础上，增加了面向对象的特性。
 什么是面向对象？
-C是面向过程的语言，关注的是解...
+C是面向过程的语言，关注的是解决问题的步骤，而OC是面向对象的，关注的是设计实现所需功能的类。
+面向对象具有三个原则：封装、继承和多态。
+封装
+封装是把过程和数据包围起来（即函数和数据结构，函数是行为，数据结构是描述），有限制的对数据的访问。
+封装保证了模块具有很好的独立性，修改维护比较容易。
+继承
+OC中只支持单继承。A类继承了B类，则A类为子类，B类为父类。A类继承B类之后，会继承B类的所有方法和实例变量，并且A类可以增加自己的方法，或者通过重写B类的方法，可以对B类方法进行修改。
+在正确的继承方式中，父类应当扮演的是底层的角色，子类是上层的业务。父类只是给子类提供服务，并不涉及子类的业务逻辑；层级关系明显，功能划分清晰；父类的所有变化，都需要在子类中体现，此时耦合已经成为需求。
+多态
+多态是指允许不同类的对象对同一方法作出响应。一般与继承结合来说，其本质是子类通过覆盖或重载父类的方法，来使得对同一类对象同一方法的调用产生不同的结果。
+由于他必须先声明数据中每个对象或者容器的类型，因此他是一门静态输入的语言。
+它是一门动态语言，具有运行时特性。代码在项目运行时可以修改或者扩展。
+运行时特性（Runtime）
+Runtime 即运行时，是用C和汇编写的一个库，其中最主要的就是消息机制。
+比如：[People eat]这个函数调用
+1、在程序运行的时候，编译器会将词句转化为objc_msgSend(People,@selector(eat))。
+2、在objc_msgSend函数中，首先会通过People的isa指针找到对应的Class。
+3、在Class中先去cach...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -415,7 +444,8 @@ C是面向过程的语言，关注的是解...
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            OC 经验总结关于NSString拼接...
+            OC 经验总结关于NSString拼接1、保留两位小数：
+12345678910111213141516171819202122232425262728
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -473,7 +503,13 @@ C是面向过程的语言，关注的是解...
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             HTML 高级HTML
-HT...
+HTML Object 元素&lt; object&gt; 的作用是支持 HTML 助手（插件）。
+HTML 助手（插件）辅助应用程序（helper application）是可由浏览器启动的程序。辅助应用程序也称为插件。
+辅助程序可用于播放音频和视频（以及其他）。辅助程序是使用 标签来加载的。
+使用辅助程序播放视频和音频的一个优势是，您能够允许用户来控制部分或全部播放设置。
+大多数辅助应用程序允许对音量设置和播放功能（比如后退、暂停、停止和播放）的手工（或程序的）控制。
+使用 QuickTime 来播放 Wave 音频。实例：
+12345678910111213...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -532,7 +568,13 @@ HT...
         
             HTML 基础（二）我们通过使用 &lt; a &gt; 标签在 HTML 中创建链接。
 有两种使用 &lt; a &gt; 标签的方式：
-通过使用 href 属性 - 创建指向另一...
+通过使用 href 属性 - 创建指向另一个文档的链接通过使用 name 属性 - 创建文档内的书签
+href 属性规定链接的目标。
+开始标签和结束标签之间的文字被作为超级链接来显示。
+实例：&lt; a href=”http://www.w3school.com.cn/&quot;&gt;Visit W3School提示：”链接文本” 不必一定是文本。图片或其他 HTML 元素都可以成为链接。
+HTML 链接 - target 属性使用 Target 属性，你可以定义被链接的文档在何处显示。下面的这行会在新窗口打开文档：
+&lt; a href=”http://www.w3school.com.cn/&quot;target=&quot;_blank&quot;&gt;Visit W3School!
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -589,7 +631,16 @@ HT...
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            HTML 基础
+            HTML 基础HTML标题是通过&lt; h1 &gt; - &lt; h6 &gt;标签来实现的。例如：
+&lt; h1&gt;我是标题111
+&lt; h2&gt;我是标题222
+&lt; h3&gt;我是标题333
+
+h1 - h6 的区别在于显示出的标题字体的大小不同。应该将 h1 用作主标题（最重要的），其后是 h2（次重要的），再其次是 h3，以此类推。
+HTML 水平线&lt; hr / &gt; 标签在 HTML 页面中创建水平线。
+&lt; p&gt;This is a paragraph&lt; hr /&gt;&lt; p&gt;This is a paragraph&lt; hr /&gt;&lt; p&gt;This is a paragraph
+HTML 段落HTML 段落是通过&lt; p &gt;来进行实现的。如：&lt; p&gt;我是段落一&lt; p&gt;我是段落二
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -647,7 +698,8 @@ HT...
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             HTML 初探仅仅会iOS开发已经不能满足自己对自己的要求了，有很多领域都想探索一番。目前打算学习前端开发。今天先从HTML开始。
-
+HTML是什么？HTML是超文本标记语言 (Hyper Text Markup Language)，它是一种标记语言（即一套标记标签），如下：
+123456&lt; html&gt;&lt; body&gt;&lt; h1&gt;My First Heading&lt;/h1&gt;&lt; p&gt;My first parag...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -705,7 +757,16 @@ HT...
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             RunLoop (二)之前有篇博客写了RunLoop的一些理论知识，这篇研究一下RunLoop在实践中的使用。
+什么时候使用RunLoopCocoa和Carbon程序提供了代码运行主程序的循环并自动启动run loop。所以，当在为你的程序创建辅助线程的时候，你才需要显式运行一个run loop。
+对于辅助线程，你需要判断一个run loop是否是必须的。如果是必须的，那么你要自己配置并启动它。你不需要在任何情况下都去启动一个线程的run loop。比如，你使用线程来处理一个预先定义的长时间运行的任务时，你应该避免启动run loop。Run loop在你要和线程有更多的交互时才需要，比如以下情况：
 
+使用端口或自定义输入源来和其他线程通信
+使用线程的定时器
+Cocoa中使用任何performSelector…的方法
+使线程周期性工作
+
+如果你决定在程序中使用run loop，那么它的配置和启动都很简单。和所有线程编程一样，你需要计划好在辅助线程退出线程的情形。让线程自然退出往往比强制关闭它更好。
+使用实例12345
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -762,7 +823,9 @@ HT...
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Runtime（后期补充）...
+            Runtime（后期补充）Runtime 是什么？OC是一门动态语言，即运行时语言，它会尽可能的把编译时候的事情压到运行的时候去做。这样的话，我们可以在运行的时候改变代码的效果，比如交换方法等，为开发提供了很大的灵活性。OC就是通过Runtime来实现这一动态性的.
+Runtime 消息机制举个OC中调用方法的栗子：
+1234567id returnValue = [receiver messageName:parameter];``` 编译之后，在runtime中是这样的形式:``` objc
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -1096,6 +1159,8 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 
+
+    <script src="/js/smoothscroll.js"></script>
 
 
 
