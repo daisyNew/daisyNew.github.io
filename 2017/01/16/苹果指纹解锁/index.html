@@ -232,7 +232,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#苹果指纹解锁"><span class="post-toc-number">1.</span> <span class="post-toc-text">苹果指纹解锁</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#title-苹果指纹解锁"><span class="post-toc-number">1.</span> <span class="post-toc-text">title:苹果指纹解锁</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入头文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">导入头文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在程序启动时，进行设置"><span class="post-toc-number">3.</span> <span class="post-toc-text">在程序启动时，进行设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体方法实现如下："><span class="post-toc-number">4.</span> <span class="post-toc-text">具体方法实现如下：</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -389,85 +389,95 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="苹果指纹解锁"><a href="#苹果指纹解锁" class="headerlink" title="苹果指纹解锁"></a>苹果指纹解锁</h1><p>指纹解锁<br>苹果的指纹解锁出来好一阵子了，但是一直没用上，所以没有研究，今天偶遇一篇关于这个的文章，所以记录一下，便于以后使用。</p>
+        <hr>
+<h2 id="title-苹果指纹解锁"><a href="#title-苹果指纹解锁" class="headerlink" title="title:苹果指纹解锁"></a>title:苹果指纹解锁</h2><p>指纹解锁<br>苹果的指纹解锁出来好一阵子了，但是一直没用上，所以没有研究，今天偶遇一篇关于这个的文章，所以记录一下，便于以后使用。</p>
 <p>实现过程如下：</p>
-<p>导入头文件</p>
-<p>1</p>
-<p>#import <localauthentication localauthentication.h=""><br>在程序启动时，进行设置</localauthentication></p>
-<p>因为指纹解锁只在iOS 8.0以上有，所以当设备满足此需求时，就开启指纹锁，否则不需要开启。</p>
-<p>1<br>2<br>3<br>if ([UIDevice currentDevice].systemVersion.floatValue &lt; 8.0) {<br>    return;<br>}<br>具体方法实现如下：</p>
-<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78</p>
-<ul>
-<li>(void)evaluateAuthenticate{<br>  //创建LAContext<br>  LAContext <em>context = [[LAContext alloc]init];<br>  NSError </em>error = nil;<br>  NSString *result  = @”请验证指纹！”;<br>  //首先使用canevatePolicy 判断设备状态<br>  if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&amp;error]) {<pre><code>//支持指纹验证
-[context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:result reply:^(BOOL success, NSError * _Nullable error) { 
-    if (success) {
-     //成功后的处理办法   
-    }else{
-        switch (error.code) {
-            case LAErrorSystemCancel:
-            {
-                //系统取消授权，如其他app切入
-                break;
+<h2 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h2><pre><code class="objc"><span class="meta">#import<span class="meta-string">&lt;LocalAuthentication/LocalAuthentication.h&gt;</span></span>
+</code></pre>
+<h2 id="在程序启动时，进行设置"><a href="#在程序启动时，进行设置" class="headerlink" title="在程序启动时，进行设置"></a>在程序启动时，进行设置</h2><p>因为指纹解锁只在iOS 8.0以上有，所以当设备满足此需求时，就开启指纹锁，否则不需要开启。</p>
+<pre><code class="objc"><span class="keyword">if</span> ([<span class="built_in">UIDevice</span> currentDevice].systemVersion.floatValue &lt; <span class="number">8.0</span>) {
+    <span class="keyword">return</span>;
+}
+</code></pre>
+<h2 id="具体方法实现如下："><a href="#具体方法实现如下：" class="headerlink" title="具体方法实现如下："></a>具体方法实现如下：</h2><pre><code class="objc">- (<span class="keyword">void</span>)evaluateAuthenticate{
+    <span class="comment">//创建LAContext</span>
+    LAContext *context = [[LAContext alloc]init];
+    <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;
+    <span class="built_in">NSString</span> *result  = <span class="string">@"请验证指纹！"</span>;
+    <span class="comment">//首先使用canevatePolicy 判断设备状态</span>
+    <span class="keyword">if</span> ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&amp;error]) {
+        <span class="comment">//支持指纹验证</span>
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:result reply:^(<span class="built_in">BOOL</span> success, <span class="built_in">NSError</span> * _Nullable error) { 
+            <span class="keyword">if</span> (success) {
+             <span class="comment">//成功后的处理办法   </span>
+            }<span class="keyword">else</span>{
+                <span class="keyword">switch</span> (error.code) {
+                    <span class="keyword">case</span> LAErrorSystemCancel:
+                    {
+                        <span class="comment">//系统取消授权，如其他app切入</span>
+                        <span class="keyword">break</span>;
+                    }
+                    <span class="keyword">case</span> LAErrorUserCancel:
+                    {
+                        <span class="comment">//用户取消验证Touch ID</span>
+                        <span class="keyword">break</span>;
+                    }
+                    <span class="keyword">case</span> LAErrorAuthenticationFailed:
+                    {
+                        <span class="comment">//授权失败</span>
+                        <span class="keyword">break</span>;
+                    }
+                    <span class="keyword">case</span> LAErrorPasscodeNotSet:
+                    {
+                        <span class="comment">//系统未设置密码</span>
+                        <span class="keyword">break</span>;
+                    }
+                    <span class="keyword">case</span> LAErrorTouchIDNotAvailable:
+                    {
+                        <span class="comment">//设备Touch ID 不可用，例如未打开</span>
+                        <span class="keyword">break</span>;
+                    }
+                    <span class="keyword">case</span> LAErrorTouchIDNotEnrolled:
+                    {
+                        <span class="comment">//设备Touch ID 不可用，用户未录入</span>
+                        <span class="keyword">break</span>;
+                    }
+                    <span class="keyword">case</span> LAErrorUserFallback:
+                    {
+                        [[<span class="built_in">NSOperationQueue</span> mainQueue] addOperationWithBlock:^{
+                          <span class="comment">//用户选择输入密码，切换主线程处理</span>
+                        }];
+                        <span class="keyword">break</span>;
+                    }
+                    <span class="keyword">default</span>:
+                    {
+                        [[<span class="built_in">NSOperationQueue</span> mainQueue] addOperationWithBlock:^{
+                            <span class="comment">//其他情况，切换主线程处理</span>
+                        }];
+                        <span class="keyword">break</span>;
+                    }
+                }
             }
-            case LAErrorUserCancel:
+        }];
+    }<span class="keyword">else</span>{
+        <span class="comment">//不支持指纹识别</span>
+        <span class="keyword">switch</span> (error.code) {
+            <span class="keyword">case</span> LAErrorTouchIDNotEnrolled:
             {
-                //用户取消验证Touch ID
-                break;
+                <span class="keyword">break</span>;
             }
-            case LAErrorAuthenticationFailed:
+            <span class="keyword">case</span> LAErrorPasscodeNotSet:
             {
-                //授权失败
-                break;
+                <span class="keyword">break</span>;
             }
-            case LAErrorPasscodeNotSet:
+            <span class="keyword">default</span>:
             {
-                //系统未设置密码
-                break;
-            }
-            case LAErrorTouchIDNotAvailable:
-            {
-                //设备Touch ID 不可用，例如未打开
-                break;
-            }
-            case LAErrorTouchIDNotEnrolled:
-            {
-                //设备Touch ID 不可用，用户未录入
-                break;
-            }
-            case LAErrorUserFallback:
-            {
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                  //用户选择输入密码，切换主线程处理
-                }];
-                break;
-            }
-            default:
-            {
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    //其他情况，切换主线程处理
-                }];
-                break;
+                <span class="keyword">break</span>;
             }
         }
     }
-}];
-</code></pre>  }else{<pre><code>//不支持指纹识别
-switch (error.code) {
-    case LAErrorTouchIDNotEnrolled:
-    {
-        break;
-    }
-    case LAErrorPasscodeNotSet:
-    {
-        break;
-    }
-    default:
-    {
-        break;
-    }
 }
-</code></pre>  }<br>}</li>
-</ul>
+</code></pre>
 
     
 
@@ -597,7 +607,7 @@ switch (error.code) {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
             </ul>
         </li>
         

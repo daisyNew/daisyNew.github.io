@@ -237,8 +237,10 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            获取通讯录中联系人的所有属性ABAddressBookRef
-123
+            
+title:获取通讯录中联系人的所有属性ABAddressBookRef
+  ABAddressBookRef addressBook = ABAddressBookCreate();
+  CFArrayRef result...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -289,14 +291,14 @@
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/16/runloop（一）/"></a></p>
+        <p class="article-headline-p"><a href="/2017/01/16/runloop（一）/">RunLoop（一）</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            RunLoop（一）RunLoop 概念一个run loop是一个事件处理的循环，用来不停的调度工作以及处理输入事件。使用run loop的目的是让你的线程在有工作的时候忙于工作，而没工作的时候处于休眠状态。如下图所示：
-
+            RunLoop 概念一个run loop是一个事件处理的循环，用来不停的调度工作以及处理输入事件。使用run loop的目的是让你的线程在有工作的时候忙于工作，而没工作的时候处于休眠状态。如下图所示：
+OSX/iOS 系统中，提供了两个这样的对象：NSRunLoop和CFRunLoopRef。CFRunLoopRef 是在 CoreFoundation 框架内的，它提供了纯 C 函数的 API...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -347,15 +349,15 @@
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/16/判断字符串的长度/"></a></p>
+        <p class="article-headline-p"><a href="/2017/01/16/判断字符串的长度/">判断字符串的长度</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            判断字符串的长度以下判断字符串长度的方法，类似于微博的判断方法，即一个汉字为一个字符，两个英文字母为一个字符，两个数字为一个字符，详见方法：
+            以下判断字符串长度的方法，类似于微博的判断方法，即一个汉字为一个字符，两个英文字母为一个字符，两个数字为一个字符，详见方法：
 -(int)lengthFromWord:(NSString *)word{
-  
+  int i,n=[s length],l=0,a=...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -406,13 +408,14 @@
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/16/cocoapods的安装和使用/"></a></p>
+        <p class="article-headline-p"><a href="/2017/01/16/cocoapods的安装和使用/">Cocoapods的安装和使用</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Cocoapods的安装和使用什么是CocoapodsCocoapods是管理第三方库的一个工具，使用它可以节省开发时配置第三方库的时间，提高工作效率。这篇博客介绍一下如何安装Cocoapo...
+            什么是CocoapodsCocoapods是管理第三方库的一个工具，使用它可以节省开发时配置第三方库的时间，提高工作效率。这篇博客介绍一下如何安装Cocoapods。
+Cocoapods原理Cocoa...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -463,13 +466,16 @@
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/16/app_内直接下载应用，不用跳转到app_store/"></a></p>
+        <p class="article-headline-p"><a href="/2017/01/16/app_内直接下载应用，不用跳转到app_store/">App 内直接下载应用，不用跳转到App Store</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            App 内直接下载应用，不用跳转到App Store一般情况下，我们要下载某一个应用时，都需要先跳转到app store中对应应用的页面，然后再进行下载。iOS 6之后，苹果提出，也可以直接在app中调起下载页面进行下载，不需要再跳转了，这对于浏览器应用来说可谓是一个福利啊！下面我们来看看这个功能怎么实现：
+            一般情况下，我们要下载某一个应用时，都需要先跳转到app store中对应应用的页面，然后再进行下载。iOS 6之后，苹果提出，也可以直接在app中调起下载页面进行下载，不需要再跳转了，这对于浏览器应用来说可谓是一个福利啊！下面我们来看看这个功能怎么实现：
+主要涉及到一个类：SKStoreProductViewController,这个类继承自UIViewController，基本用法与UIViewController相同。话不多说，请看代码：
+1、首先需要导入库
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -520,14 +526,16 @@
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/16/react_native开始/"></a></p>
+        <p class="article-headline-p"><a href="/2017/01/16/react_native开始/">React Native开始</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            React Native开始环境需求：OS XHomeBrewNode.js 4.0或更高版本
-watchman,推荐安装，否则可能会遇到Node.js监视文件系统的Bug,命令行输入 brew instal...
+            环境需求：OS XHomeBrewNode.js 4.0或更高版本
+watchman,推荐安装，否则可能会遇到Node.js监视文件系统的Bug,命令行输入 brew install watchman就可以安装。
+iOS开发必备：Xcode 7.0或更高版本
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -578,15 +586,16 @@ watchman,推荐安装，否则可能会遇到Node.js监视文件系统的Bug,命
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/16/更新cocoapods/"></a></p>
+        <p class="article-headline-p"><a href="/2017/01/16/更新cocoapods/">更新Cocoapods</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            更新CocoapodsCocoapods 更新过程：
+            Cocoapods 更新过程：
 sudo gem update –system 先更新gem资源。国内的话需要切换资源。
-gem sources ...
+gem sources –remove https://rubygems.org/
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -643,9 +652,9 @@ gem sources ...
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            微信小程序
+            
+title:微信小程序
 最近微信小程序大热，我又从一名iOS开发转战到小程序啦，真成了社会主义的一板砖，哪里需要哪里搬！废话不多说，一下是小程序的一些介绍以及开发遇坑的解决办法。
-
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -787,7 +796,7 @@ gem sources ...
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
             </ul>
         </li>
         
