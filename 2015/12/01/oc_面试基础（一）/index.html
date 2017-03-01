@@ -10,7 +10,7 @@
     
     <title>
         
-            苹果指纹解锁 | 
+            OC 面试基础（一） | 
         
         黑暗中前行
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="苹果指纹解锁 | 黑暗中前行">
+    <meta property="og:title" content="OC 面试基础（一） | 黑暗中前行">
     <meta property="og:description" content="null">
     
 
@@ -234,7 +234,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入头文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">导入头文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在程序启动时，进行设置"><span class="post-toc-number">2.</span> <span class="post-toc-text">在程序启动时，进行设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体方法实现如下："><span class="post-toc-number">3.</span> <span class="post-toc-text">具体方法实现如下：</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是OC"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是OC?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是面向对象？"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么是面向对象？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#面向对象具有三个原则：封装、继承和多态。"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">面向对象具有三个原则：封装、继承和多态。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#封装"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">封装</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#继承"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">继承</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多态"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">多态</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运行时特性（Runtime）"><span class="post-toc-number">3.</span> <span class="post-toc-text">运行时特性（Runtime）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动态性表现在三个方面：动态类型、动态绑定和动态加载"><span class="post-toc-number">4.</span> <span class="post-toc-text">动态性表现在三个方面：动态类型、动态绑定和动态加载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#动态类型"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">动态类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#动态绑定"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">动态绑定</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#动态加载"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">动态加载</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Runloop"><span class="post-toc-number">5.</span> <span class="post-toc-text">Runloop</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是Runloop"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">什么是Runloop?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Runloop-四大作用"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Runloop 四大作用</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件响应链"><span class="post-toc-number">6.</span> <span class="post-toc-text">事件响应链</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#传递链：由系统向离用户最近的view传递"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">传递链：由系统向离用户最近的view传递</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#响应链：由离用户最近的view向系统传递"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">响应链：由离用户最近的view向系统传递</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手指触摸"><span class="post-toc-number">7.</span> <span class="post-toc-text">手指触摸</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OC内存管理"><span class="post-toc-number">8.</span> <span class="post-toc-text">OC内存管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#MRC"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">MRC</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ARC"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">ARC</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#app生命周期"><span class="post-toc-number">9.</span> <span class="post-toc-text">app生命周期</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -270,7 +270,7 @@
         
     
             <p class="article-headline-p">
-                苹果指纹解锁
+                OC 面试基础（一）
             </p>
         </div>
 
@@ -289,7 +289,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>daisyNew</strong>
-        <span>8月 14, 2016</span>
+        <span>12月 01, 2015</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -340,7 +340,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=苹果指纹解锁&url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=OC 面试基础（一）&url=http://yoursite.com//2015/12/01/oc_面试基础（一）/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -349,7 +349,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=苹果指纹解锁&url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html&via=daisyNew" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=OC 面试基础（一）&url=http://yoursite.com//2015/12/01/oc_面试基础（一）/index.html&via=daisyNew" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -358,7 +358,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2015/12/01/oc_面试基础（一）/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -367,7 +367,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2015/12/01/oc_面试基础（一）/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -391,94 +391,79 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>指纹解锁<br>苹果的指纹解锁出来好一阵子了，但是一直没用上，所以没有研究，今天偶遇一篇关于这个的文章，所以记录一下，便于以后使用。</p>
-<p>实现过程如下：</p>
-<h2 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h2><pre><code class="objc"><span class="meta">#import<span class="meta-string">&lt;LocalAuthentication/LocalAuthentication.h&gt;</span></span>
-</code></pre>
-<h2 id="在程序启动时，进行设置"><a href="#在程序启动时，进行设置" class="headerlink" title="在程序启动时，进行设置"></a>在程序启动时，进行设置</h2><p>因为指纹解锁只在iOS 8.0以上有，所以当设备满足此需求时，就开启指纹锁，否则不需要开启。</p>
-<pre><code class="objc"><span class="keyword">if</span> ([<span class="built_in">UIDevice</span> currentDevice].systemVersion.floatValue &lt; <span class="number">8.0</span>) {
-    <span class="keyword">return</span>;
-}
-</code></pre>
-<h2 id="具体方法实现如下："><a href="#具体方法实现如下：" class="headerlink" title="具体方法实现如下："></a>具体方法实现如下：</h2><pre><code class="objc">- (<span class="keyword">void</span>)evaluateAuthenticate{
-    <span class="comment">//创建LAContext</span>
-    LAContext *context = [[LAContext alloc]init];
-    <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;
-    <span class="built_in">NSString</span> *result  = <span class="string">@"请验证指纹！"</span>;
-    <span class="comment">//首先使用canevatePolicy 判断设备状态</span>
-    <span class="keyword">if</span> ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&amp;error]) {
-        <span class="comment">//支持指纹验证</span>
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:result reply:^(<span class="built_in">BOOL</span> success, <span class="built_in">NSError</span> * _Nullable error) { 
-            <span class="keyword">if</span> (success) {
-             <span class="comment">//成功后的处理办法   </span>
-            }<span class="keyword">else</span>{
-                <span class="keyword">switch</span> (error.code) {
-                    <span class="keyword">case</span> LAErrorSystemCancel:
-                    {
-                        <span class="comment">//系统取消授权，如其他app切入</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorUserCancel:
-                    {
-                        <span class="comment">//用户取消验证Touch ID</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorAuthenticationFailed:
-                    {
-                        <span class="comment">//授权失败</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorPasscodeNotSet:
-                    {
-                        <span class="comment">//系统未设置密码</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorTouchIDNotAvailable:
-                    {
-                        <span class="comment">//设备Touch ID 不可用，例如未打开</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorTouchIDNotEnrolled:
-                    {
-                        <span class="comment">//设备Touch ID 不可用，用户未录入</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorUserFallback:
-                    {
-                        [[<span class="built_in">NSOperationQueue</span> mainQueue] addOperationWithBlock:^{
-                          <span class="comment">//用户选择输入密码，切换主线程处理</span>
-                        }];
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">default</span>:
-                    {
-                        [[<span class="built_in">NSOperationQueue</span> mainQueue] addOperationWithBlock:^{
-                            <span class="comment">//其他情况，切换主线程处理</span>
-                        }];
-                        <span class="keyword">break</span>;
-                    }
-                }
-            }
-        }];
-    }<span class="keyword">else</span>{
-        <span class="comment">//不支持指纹识别</span>
-        <span class="keyword">switch</span> (error.code) {
-            <span class="keyword">case</span> LAErrorTouchIDNotEnrolled:
-            {
-                <span class="keyword">break</span>;
-            }
-            <span class="keyword">case</span> LAErrorPasscodeNotSet:
-            {
-                <span class="keyword">break</span>;
-            }
-            <span class="keyword">default</span>:
-            {
-                <span class="keyword">break</span>;
-            }
-        }
-    }
-}
-</code></pre>
+        <h3 id="什么是OC"><a href="#什么是OC" class="headerlink" title="什么是OC?"></a>什么是OC?</h3><p>OC 即Objective-C，他是在C的基础上，增加了面向对象的特性。</p>
+<h3 id="什么是面向对象？"><a href="#什么是面向对象？" class="headerlink" title="什么是面向对象？"></a>什么是面向对象？</h3><p>C是面向过程的语言，关注的是解决问题的步骤，而OC是面向对象的，关注的是设计实现所需功能的类。</p>
+<h4 id="面向对象具有三个原则：封装、继承和多态。"><a href="#面向对象具有三个原则：封装、继承和多态。" class="headerlink" title="面向对象具有三个原则：封装、继承和多态。"></a>面向对象具有三个原则：封装、继承和多态。</h4><h5 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h5><p>封装是把过程和数据包围起来（即函数和数据结构，函数是行为，数据结构是描述），有限制的对数据的访问。</p>
+<p>封装保证了模块具有很好的独立性，修改维护比较容易。</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>OC中只支持单继承。A类继承了B类，则A类为子类，B类为父类。A类继承B类之后，会继承B类的所有方法和实例变量，并且A类可以增加自己的方法，或者通过重写B类的方法，可以对B类方法进行修改。</p>
+<p>在正确的继承方式中，父类应当扮演的是底层的角色，子类是上层的业务。父类只是给子类提供服务，并不涉及子类的业务逻辑；层级关系明显，功能划分清晰；父类的所有变化，都需要在子类中体现，此时耦合已经成为需求。</p>
+<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>多态是指允许不同类的对象对同一方法作出响应。一般与继承结合来说，其本质是子类通过覆盖或重载父类的方法，来使得对同一类对象同一方法的调用产生不同的结果。</p>
+<p>由于他必须先声明数据中每个对象或者容器的类型，因此他是一门静态输入的语言。</p>
+<p>它是一门动态语言，具有运行时特性。代码在项目运行时可以修改或者扩展。</p>
+<h3 id="运行时特性（Runtime）"><a href="#运行时特性（Runtime）" class="headerlink" title="运行时特性（Runtime）"></a>运行时特性（Runtime）</h3><p>Runtime 即运行时，是用C和汇编写的一个库，其中最主要的就是消息机制。</p>
+<p>比如：[People eat]这个函数调用</p>
+<p>1、在程序运行的时候，编译器会将词句转化为objc_msgSend(People,@selector(eat))。</p>
+<p>2、在objc_msgSend函数中，首先会通过People的isa指针找到对应的Class。</p>
+<p>3、在Class中先去cache中通过SEL查找对应函数method（cache中method列表是以SEL为key通过hash表来存储的，这样能提高函数查找速度）</p>
+<p>4、若cache中未找到,再去methodList中查找，若methodlist中未找到，则取superClass中查找。</p>
+<p>5、若能找到，则将method加入到cache中，以方便下次查找，并通过method中的函数指针跳转到对应的函数中去执行。</p>
+<h3 id="动态性表现在三个方面：动态类型、动态绑定和动态加载"><a href="#动态性表现在三个方面：动态类型、动态绑定和动态加载" class="headerlink" title="动态性表现在三个方面：动态类型、动态绑定和动态加载"></a>动态性表现在三个方面：动态类型、动态绑定和动态加载</h3><h4 id="动态类型"><a href="#动态类型" class="headerlink" title="动态类型"></a>动态类型</h4><p>动态类型就是id类型。OC中内置的类型一般为静态类型，静态类型在编译时就能被识别出来，若类型不匹配，就会爆出警告。而动态类型在编译的时候是不会被识别的，只有在运行时，根据当时的语境来确定类型。</p>
+<h4 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h4><p>动态绑定需要用到@selector/SEL。OC在运行的时候才会动态地添加函数调用，在运行时才决定最终调用什么的方法，需要传什么参数进去，这就是动态绑定。</p>
+<p>要实现它就必须用SEL变量绑定一个方法，SEL并不是C里面的函数指针，虽然很像，但不是。SEL变量只是一个整数，他是该方法的ID。以前的函数调用，是根据函数名，也就是字符串去查找函数体。但现在，我们是根据一个ID整数来查找方法，整数的查找自然要比字符串的查找快得多！所以，动态绑定的特定不仅方便，而且效率更高。</p>
+<h4 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h4><p>动态加载是指根据需求动态地加载资源，在运行时加载新类。在运行时创建新类，只需要3步：</p>
+<p>1、为 class pair分配存储空间 ,使用 objc_allocateClassPair函数</p>
+<p>2、增加需要的方法使用class_addMethod函数,增加实例变量用class_addIvar</p>
+<p>3 、用objc_registerClassPair函数注册这个类,以便它能被别人使用。</p>
+<p>Method Swizzling</p>
+<p>在Objective-C中调用一个方法，其实是向一个对象发送消息，查找消息的唯一依据是selector的名字。利用Objective-C的动态特性，可以实现在运行时偷换selector对应的方法实现，达到给方法挂钩的目的。每个类都有一个方法列表，存放着selector的名字和方法实现的映射关系。IMP类似函数指针，指向具体的Method实现。</p>
+<p>用 method_exchangeImplementations 来交换2个方法中的IMP，</p>
+<p>用 class_replaceMethod 来修改类，</p>
+<p>用 method_setImplementation 来直接设置某个方法的IMP，归根结底，都是偷换了selector的IMP。</p>
+<p>兼容C语言，可以混用。</p>
+<h3 id="Runloop"><a href="#Runloop" class="headerlink" title="Runloop"></a>Runloop</h3><h4 id="什么是Runloop"><a href="#什么是Runloop" class="headerlink" title="什么是Runloop?"></a>什么是Runloop?</h4><p>Runloop 是一种让线程能够随时处理时间但不退出的机制，是一种事件处理的循环，RunLoop实际上是一个对象，这个对象管理了其需要处理的事件和消息，并提供了一个入口函数来执行Event Loop的逻辑。线程执行了这个函数后，就会一直处于这个函数内部 “接受消息-&gt;等待-&gt;处理” 的循环中，直到这个循环结束（比如传入 quit 的消息），函数返回。让线程在没有处理消息时休眠以避免资源占用、在有消息到来时立刻被唤醒。</p>
+<p>一个runloop就是一个事件处理循环，用来不停的监听和处理输入事件并将其分配到对应的目标上进行处理。</p>
+<h4 id="Runloop-四大作用"><a href="#Runloop-四大作用" class="headerlink" title="Runloop 四大作用"></a>Runloop 四大作用</h4><p>1、使程序一直运行接受用户输入<br>2、决定程序在何时应该处理哪些events<br>3、调用解耦<br>4、节省CPU时间</p>
+<h3 id="事件响应链"><a href="#事件响应链" class="headerlink" title="事件响应链"></a>事件响应链</h3><p>对于iOS设备用户来说，操作设备的方式主要有三种：触摸屏幕、晃动设备、通过遥控设施控制设备。对应事件有以下三种：触屏事件（touch event）、运动事件（motion event）和远程控制事件（remote-control event）。</p>
+<p>时间的传递和相应分两个链：</p>
+<h4 id="传递链：由系统向离用户最近的view传递"><a href="#传递链：由系统向离用户最近的view传递" class="headerlink" title="传递链：由系统向离用户最近的view传递"></a>传递链：由系统向离用户最近的view传递</h4><p>UIKit –&gt; active app’s event queue –&gt; window –&gt; root view –&gt;……–&gt;lowest view</p>
+<h4 id="响应链：由离用户最近的view向系统传递"><a href="#响应链：由离用户最近的view向系统传递" class="headerlink" title="响应链：由离用户最近的view向系统传递"></a>响应链：由离用户最近的view向系统传递</h4><p>initial view –&gt; super view –&gt; …..–&gt; view controller –&gt; window –&gt; Application</p>
+<p>响应者对象是指有响应和处理时间能力的对象。响应者链就是由一系列的响应者对象构成的一个层次结构。</p>
+<p>响应者链有以下特点：</p>
+<p>1、响应者链通常是由视图（UIView）构成的；</p>
+<p>2、一个视图的下一个响应者是它视图控制器（UIViewController）（如果有的话），然后再转给它的父视图（Super View）；</p>
+<p>3、视图控制器（如果有的话）的下一个响应者为其管理的视图的父视图；</p>
+<p>4、单例的窗口（UIWindow）的内容视图将指向窗口本身作为它的下一个响应者，Cocoa Touch应用不像Cocoa应用，它只有一个UIWindow对象，因此整个响应者链要简单一点；</p>
+<p>5、单例的应用（UIApplication）是一个响应者链的终点，它的下一个响应者指向nil，以结束整个循环。</p>
+<h3 id="手指触摸"><a href="#手指触摸" class="headerlink" title="手指触摸"></a>手指触摸</h3><p>iOS系统检测到手指触摸(Touch)操作时会将其打包成一个UIEvent对象，并放入当前活动Application的事件队列，单例的UIApplication会从事件队列中取出触摸事件并传递给单例的UIWindow来处理，UIWindow对象首先会使用hitTest:withEvent:方法寻找此次Touch操作初始点所在的视图(View)，即需要将触摸事件传递给其处理的视图，这个过程称之为hit-test view。</p>
+<p>UIWindow实例对象会首先在它的内容视图上调用hitTest:withEvent:，此方法会在其视图层级结构中的每个视图上调用pointInside:withEvent:（该方法用来判断点击事件发生的位置是否处于当前视图范围内，以确定用户是不是点击了当前视图），如果pointInside:withEvent:返回YES，则继续逐级调用，直到找到touch操作发生的位置，这个视图也就是要找的hit-test view。</p>
+<p>hitTest:withEvent:方法的处理流程如下:</p>
+<p>首先调用当前视图的pointInside:withEvent:方法判断触摸点是否在当前视图内；若返回NO,则hitTest:withEvent:返回nil;若返回YES,则向当前视图的所有子视图(subviews)发送hitTest:withEvent:消息，所有子视图的遍历顺序是从最顶层视图一直到到最底层视图，即从subviews数组的末尾向前遍历，直到有子视图返回非空对象或者全部子视图遍历完毕；若第一次有子视图返回非空对象，则hitTest:withEvent:方法返回此对象，处理结束；如所有子视图都返回非，则hitTest:withEvent:方法返回自身(self)。</p>
+<h3 id="OC内存管理"><a href="#OC内存管理" class="headerlink" title="OC内存管理"></a>OC内存管理</h3><p>OC 使用引用计数来管理内存，每当alloc一个对象，该对象的引用计数加1，使用该对象一次，引用计数也会加1，如果对该对象release，该对象的引用计数就会减1，若该对象的引用计数为0，这个对象就会被释放。</p>
+<p>OC中有MRC和ARC两种内存管理方式。</p>
+<h4 id="MRC"><a href="#MRC" class="headerlink" title="MRC"></a>MRC</h4><p>MRC是手动引用计数。需要程序员自己使用关键字对内存进行管理。</p>
+<h4 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h4><p>ARC是自动引用计数。是iOS 5推出的，只用ARC,不再需要程序员自己管理内存。但并不是说在ARC下不会出现内存问题。程序员仍需关注内存问题，比如循环引用或野指针的问题。</p>
+<h3 id="app生命周期"><a href="#app生命周期" class="headerlink" title="app生命周期"></a>app生命周期</h3><p>app应用程序有5种状态：</p>
+<p>Not running未运行：程序没启动。<br>Inactive未激活：程序在前台运行，不过没有接收到事件。在没有事件处理情况下程序通常停留在这个状态。<br>Active激活：程序在前台运行而且接收到了事件。这也是前台的一个正常的模式。<br>Backgroud后台：程序在后台而且能执行代码，大多数程序进入这个状态后会在在这个状态上停留一会。时间到之后会进入挂起状态(Suspended)。有的程序经过特殊的请求后可以长期处于Backgroud状态。<br>Suspended挂起：程序在后台不能执行代码。系统会自动把程序变成这个状态而且不会发出通知。当挂起时，程序还是停留在内存中的，当系统内存低时，系统就把挂起的程序清除掉，为前台程序提供更多的内存。<br>初次启动：</p>
+<p>iOS_didFinishLaunchingWithOptions</p>
+<p>iOS_applicationDidBecomeActive</p>
+<p>按下home键：</p>
+<p>iOS_applicationWillResignActive</p>
+<p>iOS_applicationDidEnterBackground</p>
+<p>点击程序图标进入：</p>
+<p>iOS_applicationWillEnterForeground</p>
+<p>iOS_applicationDidBecomeActive</p>
+<p>程序终止</p>
+<p>程序只要符合以下情况之一，只要进入后台或挂起状态就会终止：</p>
+<p>①iOS4.0以前的系统</p>
+<p>②app是基于iOS4.0之前系统开发的。</p>
+<p>③设备不支持多任务</p>
+<p>④在Info.plist文件中，程序包含了 UIApplicationExitsOnSuspend 键。</p>
+<p>系统常常是为其他app启动时由于内存不足而回收内存最后需要终止应用程序，但有时也会是由于app很长时间才响应而终止。</p>
+<p>如果app当时运行在后台并且没有暂停，系统会在应用程序终止之前调用app的代理的方法</p>
+<p>1</p>
+<ul>
+<li>(void)applicationWillTerminate:(UIApplication *)application；<br>这样可以让你可以做一些清理工作。你可以保存一些数据或app的状态。这个方法也有5秒钟的限制。超时后方法会返回程序从内存中清除。用户可以手工关闭应用程序。</li>
+</ul>
 
     
 
@@ -502,7 +487,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2016/09/14/html_初探/" id="post_nav-newer" class="prev-content">
+        <a href="/2015/12/23/runloop（一）/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -516,7 +501,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2016/06/10/app_内直接下载应用，不用跳转到app_store/" id="post_nav-older" class="next-content">
+        <a href="/2015/11/10/runloop_(二)/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

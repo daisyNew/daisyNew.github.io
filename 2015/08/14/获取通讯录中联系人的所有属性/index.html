@@ -10,7 +10,7 @@
     
     <title>
         
-            苹果指纹解锁 | 
+            获取通讯录中联系人的所有属性 | 
         
         黑暗中前行
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="苹果指纹解锁 | 黑暗中前行">
+    <meta property="og:title" content="获取通讯录中联系人的所有属性 | 黑暗中前行">
     <meta property="og:description" content="null">
     
 
@@ -234,7 +234,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入头文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">导入头文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在程序启动时，进行设置"><span class="post-toc-number">2.</span> <span class="post-toc-text">在程序启动时，进行设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体方法实现如下："><span class="post-toc-number">3.</span> <span class="post-toc-text">具体方法实现如下：</span></a></li></ol>
+        
 
         <!--
         <li class="mdl-menu__item">
@@ -270,7 +270,7 @@
         
     
             <p class="article-headline-p">
-                苹果指纹解锁
+                获取通讯录中联系人的所有属性
             </p>
         </div>
 
@@ -289,7 +289,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>daisyNew</strong>
-        <span>8月 14, 2016</span>
+        <span>8月 14, 2015</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -340,7 +340,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=苹果指纹解锁&url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=获取通讯录中联系人的所有属性&url=http://yoursite.com//2015/08/14/获取通讯录中联系人的所有属性/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -349,7 +349,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=苹果指纹解锁&url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html&via=daisyNew" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=获取通讯录中联系人的所有属性&url=http://yoursite.com//2015/08/14/获取通讯录中联系人的所有属性/index.html&via=daisyNew" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -358,7 +358,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2015/08/14/获取通讯录中联系人的所有属性/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -367,7 +367,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2015/08/14/获取通讯录中联系人的所有属性/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -391,93 +391,197 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>指纹解锁<br>苹果的指纹解锁出来好一阵子了，但是一直没用上，所以没有研究，今天偶遇一篇关于这个的文章，所以记录一下，便于以后使用。</p>
-<p>实现过程如下：</p>
-<h2 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h2><pre><code class="objc"><span class="meta">#import<span class="meta-string">&lt;LocalAuthentication/LocalAuthentication.h&gt;</span></span>
-</code></pre>
-<h2 id="在程序启动时，进行设置"><a href="#在程序启动时，进行设置" class="headerlink" title="在程序启动时，进行设置"></a>在程序启动时，进行设置</h2><p>因为指纹解锁只在iOS 8.0以上有，所以当设备满足此需求时，就开启指纹锁，否则不需要开启。</p>
-<pre><code class="objc"><span class="keyword">if</span> ([<span class="built_in">UIDevice</span> currentDevice].systemVersion.floatValue &lt; <span class="number">8.0</span>) {
-    <span class="keyword">return</span>;
-}
-</code></pre>
-<h2 id="具体方法实现如下："><a href="#具体方法实现如下：" class="headerlink" title="具体方法实现如下："></a>具体方法实现如下：</h2><pre><code class="objc">- (<span class="keyword">void</span>)evaluateAuthenticate{
-    <span class="comment">//创建LAContext</span>
-    LAContext *context = [[LAContext alloc]init];
-    <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;
-    <span class="built_in">NSString</span> *result  = <span class="string">@"请验证指纹！"</span>;
-    <span class="comment">//首先使用canevatePolicy 判断设备状态</span>
-    <span class="keyword">if</span> ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&amp;error]) {
-        <span class="comment">//支持指纹验证</span>
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:result reply:^(<span class="built_in">BOOL</span> success, <span class="built_in">NSError</span> * _Nullable error) { 
-            <span class="keyword">if</span> (success) {
-             <span class="comment">//成功后的处理办法   </span>
-            }<span class="keyword">else</span>{
-                <span class="keyword">switch</span> (error.code) {
-                    <span class="keyword">case</span> LAErrorSystemCancel:
-                    {
-                        <span class="comment">//系统取消授权，如其他app切入</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorUserCancel:
-                    {
-                        <span class="comment">//用户取消验证Touch ID</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorAuthenticationFailed:
-                    {
-                        <span class="comment">//授权失败</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorPasscodeNotSet:
-                    {
-                        <span class="comment">//系统未设置密码</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorTouchIDNotAvailable:
-                    {
-                        <span class="comment">//设备Touch ID 不可用，例如未打开</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorTouchIDNotEnrolled:
-                    {
-                        <span class="comment">//设备Touch ID 不可用，用户未录入</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorUserFallback:
-                    {
-                        [[<span class="built_in">NSOperationQueue</span> mainQueue] addOperationWithBlock:^{
-                          <span class="comment">//用户选择输入密码，切换主线程处理</span>
-                        }];
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">default</span>:
-                    {
-                        [[<span class="built_in">NSOperationQueue</span> mainQueue] addOperationWithBlock:^{
-                            <span class="comment">//其他情况，切换主线程处理</span>
-                        }];
-                        <span class="keyword">break</span>;
-                    }
-                }
-            }
-        }];
-    }<span class="keyword">else</span>{
-        <span class="comment">//不支持指纹识别</span>
-        <span class="keyword">switch</span> (error.code) {
-            <span class="keyword">case</span> LAErrorTouchIDNotEnrolled:
-            {
-                <span class="keyword">break</span>;
-            }
-            <span class="keyword">case</span> LAErrorPasscodeNotSet:
-            {
-                <span class="keyword">break</span>;
-            }
-            <span class="keyword">default</span>:
-            {
-                <span class="keyword">break</span>;
-            }
-        }
+        <p>ABAddressBookRef</p>
+<pre><code class="objc">  ABAddressBookRef addressBook = ABAddressBookCreate();
+  <span class="built_in">CFArrayRef</span> results = ABAddressBookCopyArrayOfAllPeople(addressBook);
+  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">CFArrayGetCount</span>(results); i++){
+    ABRecordRef person = <span class="built_in">CFArrayGetValueAtIndex</span>(results, i);
+    <span class="comment">//读取firstname</span>
+    <span class="built_in">NSString</span> *personName = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    <span class="keyword">if</span>(personName != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"\n姓名：%@\n"</span>,personName];
+    }  
+    <span class="comment">//读取lastname</span>
+    <span class="built_in">NSString</span> *lastname = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonLastNameProperty);
+    <span class="keyword">if</span>(lastname != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,lastname];
+     }  
+    <span class="comment">//读取middlename</span>
+    <span class="built_in">NSString</span> *middlename = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonMiddleNameProperty);
+    <span class="keyword">if</span>(middlename != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,middlename];
+     }      
+    <span class="comment">//读取prefix前缀</span>
+    <span class="built_in">NSString</span> *prefix = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonPrefixProperty);
+    <span class="keyword">if</span>(prefix != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,prefix];
+     }   
+    <span class="comment">//读取suffix后缀</span>
+    <span class="built_in">NSString</span> *suffix = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonSuffixProperty);
+    <span class="keyword">if</span>(suffix != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,suffix];
     }
+    <span class="comment">//读取nickname呢称</span>
+    <span class="built_in">NSString</span> *nickname = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonNicknameProperty);
+    <span class="keyword">if</span>(nickname != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,nickname];
+     }  
+    <span class="comment">//读取firstname拼音音标</span>
+    <span class="built_in">NSString</span> *firstnamePhonetic = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonFirstNamePhoneticProperty);
+    <span class="keyword">if</span>(firstnamePhonetic != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,firstnamePhonetic];
+     } 
+    <span class="comment">//读取lastname拼音音标</span>
+    <span class="built_in">NSString</span> *lastnamePhonetic = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonLastNamePhoneticProperty);
+    <span class="keyword">if</span>(lastnamePhonetic != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,lastnamePhonetic];
+    }  
+    <span class="comment">//读取middlename拼音音标</span>
+    <span class="built_in">NSString</span> *middlenamePhonetic = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonMiddleNamePhoneticProperty);
+    <span class="keyword">if</span>(middlenamePhonetic != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,middlenamePhonetic];
+     } 
+    <span class="comment">//读取organization公司</span>
+    <span class="built_in">NSString</span> *organization = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonOrganizationProperty);
+    <span class="keyword">if</span>(organization != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,organization];
+    }  
+    <span class="comment">//读取jobtitle工作</span>
+    <span class="built_in">NSString</span> *jobtitle = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonJobTitleProperty);
+    <span class="keyword">if</span>(jobtitle != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,jobtitle];
+     }  
+    <span class="comment">//读取department部门</span>
+    <span class="built_in">NSString</span> *department = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonDepartmentProperty);
+    <span class="keyword">if</span>(department != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,department];
+    } 
+    <span class="comment">//读取birthday生日</span>
+    <span class="built_in">NSDate</span> *birthday = (<span class="built_in">NSDate</span>*)ABRecordCopyValue(person, kABPersonBirthdayProperty);
+    <span class="keyword">if</span>(birthday != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,birthday];
+     }   
+    <span class="comment">//读取note备忘录</span>
+    <span class="built_in">NSString</span> *note = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonNoteProperty);
+    <span class="keyword">if</span>(note != <span class="literal">nil</span>){
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,note];
+    }   
+    <span class="comment">//第一次添加该条记录的时间</span>
+    <span class="built_in">NSString</span> *firstknow = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonCreationDateProperty);
+    <span class="built_in">NSLog</span>(<span class="string">@"第一次添加该条记录的时间%@\n"</span>,firstknow);
+    <span class="comment">//最后一次修改該条记录的时间</span>
+    <span class="built_in">NSString</span> *lastknow = (<span class="built_in">NSString</span>*)ABRecordCopyValue(person, kABPersonModificationDateProperty);
+    <span class="built_in">NSLog</span>(<span class="string">@"最后一次修改該条记录的时间%@\n"</span>,lastknow);
+    <span class="comment">//获取email多值</span>
+    ABMultiValueRef email = ABRecordCopyValue(person, kABPersonEmailProperty);
+    <span class="keyword">int</span> emailcount = ABMultiValueGetCount(email);    
+    <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; emailcount; x++){
+        <span class="comment">//获取email Label</span>
+        <span class="built_in">NSString</span>* emailLabel = (<span class="built_in">NSString</span>*)ABAddressBookCopyLocalizedLabel(ABMultiValueCopyLabelAtIndex(email, x));
+        <span class="comment">//获取email值</span>
+        <span class="built_in">NSString</span>* emailContent = (<span class="built_in">NSString</span>*)ABMultiValueCopyValueAtIndex(email, x);
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@:%@\n"</span>,emailLabel,emailContent];
+    }
+    <span class="comment">//读取地址多值</span>
+    ABMultiValueRef address = ABRecordCopyValue(person, kABPersonAddressProperty);
+    <span class="keyword">int</span> count = ABMultiValueGetCount(address);    
+    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; count; j++){
+        <span class="comment">//获取地址Label</span>
+        <span class="built_in">NSString</span>* addressLabel = (<span class="built_in">NSString</span>*)ABMultiValueCopyLabelAtIndex(address, j);
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,addressLabel]; 
+        <span class="comment">//获取該label下的地址6属性</span>
+        <span class="built_in">NSDictionary</span>* personaddress =(<span class="built_in">NSDictionary</span>*) ABMultiValueCopyValueAtIndex(address, j);        
+        <span class="built_in">NSString</span>* country = [personaddress valueForKey:(<span class="built_in">NSString</span> *)kABPersonAddressCountryKey];
+        <span class="keyword">if</span>(country != <span class="literal">nil</span>){
+            textView.text = [textView.text stringByAppendingFormat:<span class="string">@"国家：%@\n"</span>,country];
+         }
+        <span class="built_in">NSString</span>* city = [personaddress valueForKey:(<span class="built_in">NSString</span> *)kABPersonAddressCityKey];
+        <span class="keyword">if</span>(city != <span class="literal">nil</span>){
+            textView.text = [textView.text stringByAppendingFormat:<span class="string">@"城市：%@\n"</span>,city];
+        }
+        <span class="built_in">NSString</span>* state = [personaddress valueForKey:(<span class="built_in">NSString</span> *)kABPersonAddressStateKey];
+        <span class="keyword">if</span>(state != <span class="literal">nil</span>){
+            textView.text = [textView.text stringByAppendingFormat:<span class="string">@"省：%@\n"</span>,state];
+        }
+        <span class="built_in">NSString</span>* street = [personaddress valueForKey:(<span class="built_in">NSString</span> *)kABPersonAddressStreetKey];
+        <span class="keyword">if</span>(street != <span class="literal">nil</span>){
+            textView.text = [textView.text stringByAppendingFormat:<span class="string">@"街道：%@\n"</span>,street];
+        }
+        <span class="built_in">NSString</span>* zip = [personaddress valueForKey:(<span class="built_in">NSString</span> *)kABPersonAddressZIPKey];
+        <span class="keyword">if</span>(zip != <span class="literal">nil</span>){
+            textView.text = [textView.text stringByAppendingFormat:<span class="string">@"邮编：%@\n"</span>,zip];    
+        }
+        <span class="built_in">NSString</span>* coutntrycode = [personaddress valueForKey:(<span class="built_in">NSString</span> *)kABPersonAddressCountryCodeKey];
+        <span class="keyword">if</span>(coutntrycode != <span class="literal">nil</span>)
+            textView.text = [textView.text stringByAppendingFormat:<span class="string">@"国家编号：%@\n"</span>,coutntrycode];    
+    }
+    <span class="comment">//获取dates多值</span>
+    ABMultiValueRef dates = ABRecordCopyValue(person, kABPersonDateProperty);
+    <span class="keyword">int</span> datescount = ABMultiValueGetCount(dates);    
+    <span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">0</span>; y &lt; datescount; y++)
+    {
+        <span class="comment">//获取dates Label</span>
+        <span class="built_in">NSString</span>* datesLabel = (<span class="built_in">NSString</span>*)ABAddressBookCopyLocalizedLabel(ABMultiValueCopyLabelAtIndex(dates, y));
+        <span class="comment">//获取dates值</span>
+        <span class="built_in">NSString</span>* datesContent = (<span class="built_in">NSString</span>*)ABMultiValueCopyValueAtIndex(dates, y);
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@:%@\n"</span>,datesLabel,datesContent];}
+    <span class="comment">//获取kind值</span>
+    <span class="built_in">CFNumberRef</span> recordType = ABRecordCopyValue(person, kABPersonKindProperty);
+    <span class="keyword">if</span> (recordType == kABPersonKindOrganization) {
+        <span class="comment">// it's a company</span>
+        <span class="built_in">NSLog</span>(<span class="string">@"it's a company\n"</span>);
+    } <span class="keyword">else</span> {
+        <span class="comment">// it's a person, resource, or room</span>
+        <span class="built_in">NSLog</span>(<span class="string">@"it's a person, resource, or room\n"</span>);
+    }
+    <span class="comment">//获取IM多值</span>
+    ABMultiValueRef instantMessage = ABRecordCopyValue(person, kABPersonInstantMessageProperty);
+    <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt; ABMultiValueGetCount(instantMessage); l++)
+    {
+        <span class="comment">//获取IM Label</span>
+        <span class="built_in">NSString</span>* instantMessageLabel = (<span class="built_in">NSString</span>*)ABMultiValueCopyLabelAtIndex(instantMessage, l);
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@\n"</span>,instantMessageLabel];
+        <span class="comment">//获取該label下的2属性</span>
+        <span class="built_in">NSDictionary</span>* instantMessageContent =(<span class="built_in">NSDictionary</span>*) ABMultiValueCopyValueAtIndex(instantMessage, l);        
+        <span class="built_in">NSString</span>* username = [instantMessageContent valueForKey:(<span class="built_in">NSString</span> *)kABPersonInstantMessageUsernameKey];
+        <span class="keyword">if</span>(username != <span class="literal">nil</span>){
+            textView.text = [textView.text stringByAppendingFormat:<span class="string">@"username：%@\n"</span>,username];
+        }
+        <span class="built_in">NSString</span>* service = [instantMessageContent valueForKey:(<span class="built_in">NSString</span> *)kABPersonInstantMessageServiceKey];
+        <span class="keyword">if</span>(service != <span class="literal">nil</span>){
+            textView.text = [textView.text stringByAppendingFormat:<span class="string">@"service：%@\n"</span>,service];            
+    }
+    <span class="comment">//读取*****多值</span>
+    ABMultiValueRef phone = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k&lt;ABMultiValueGetCount(phone); k++)
+    {
+        <span class="comment">//获取*****Label</span>
+        <span class="built_in">NSString</span> * personPhoneLabel = (<span class="built_in">NSString</span>*)ABAddressBookCopyLocalizedLabel(ABMultiValueCopyLabelAtIndex(phone, k));
+        <span class="comment">//获取該Label下的*****值</span>
+        <span class="built_in">NSString</span> * personPhone = (<span class="built_in">NSString</span>*)ABMultiValueCopyValueAtIndex(phone, k);
+
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@:%@\n"</span>,personPhoneLabel,personPhone];
+    }
+    <span class="comment">//获取URL多值</span>
+    ABMultiValueRef url = ABRecordCopyValue(person, kABPersonURLProperty);
+    <span class="keyword">for</span> (<span class="keyword">int</span> m = <span class="number">0</span>; m &lt; ABMultiValueGetCount(url); m++)
+    {
+        <span class="comment">//获取*****Label</span>
+        <span class="built_in">NSString</span> * urlLabel = (<span class="built_in">NSString</span>*)ABAddressBookCopyLocalizedLabel(ABMultiValueCopyLabelAtIndex(url, m));
+        <span class="comment">//获取該Label下的*****值</span>
+        <span class="built_in">NSString</span> * urlContent = (<span class="built_in">NSString</span>*)ABMultiValueCopyValueAtIndex(url,m);
+
+        textView.text = [textView.text stringByAppendingFormat:<span class="string">@"%@:%@\n"</span>,urlLabel,urlContent];
+    }
+    <span class="comment">//读取照片</span>
+    <span class="built_in">NSData</span> *image = (<span class="built_in">NSData</span>*)ABPersonCopyImageData(person);
+    <span class="built_in">UIImageView</span> *myImage = [[<span class="built_in">UIImageView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">200</span>, <span class="number">0</span>, <span class="number">50</span>, <span class="number">50</span>)];
+    [myImage setImage:[<span class="built_in">UIImage</span> imageWithData:image]];
+    myImage.opaque = <span class="literal">YES</span>;
+    [textView addSubview:myImage];
 }
+<span class="built_in">CFRelease</span>(results);
+<span class="built_in">CFRelease</span>(addressBook);
 </code></pre>
 
     
@@ -502,7 +606,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2016/09/14/html_初探/" id="post_nav-newer" class="prev-content">
+        <a href="/2015/11/01/runtime（后期补充）/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -515,14 +619,6 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
-    
-        <a href="/2016/06/10/app_内直接下载应用，不用跳转到app_store/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
     
 </nav>
 

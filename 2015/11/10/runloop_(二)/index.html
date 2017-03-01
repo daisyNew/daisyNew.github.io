@@ -10,7 +10,7 @@
     
     <title>
         
-            苹果指纹解锁 | 
+            RunLoop (二) | 
         
         黑暗中前行
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="苹果指纹解锁 | 黑暗中前行">
+    <meta property="og:title" content="RunLoop (二) | 黑暗中前行">
     <meta property="og:description" content="null">
     
 
@@ -234,7 +234,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入头文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">导入头文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在程序启动时，进行设置"><span class="post-toc-number">2.</span> <span class="post-toc-text">在程序启动时，进行设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体方法实现如下："><span class="post-toc-number">3.</span> <span class="post-toc-text">具体方法实现如下：</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么时候使用RunLoop"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么时候使用RunLoop</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用实例"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用实例</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -270,7 +270,7 @@
         
     
             <p class="article-headline-p">
-                苹果指纹解锁
+                RunLoop (二)
             </p>
         </div>
 
@@ -289,7 +289,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>daisyNew</strong>
-        <span>8月 14, 2016</span>
+        <span>11月 10, 2015</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -340,7 +340,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=苹果指纹解锁&url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=RunLoop (二)&url=http://yoursite.com//2015/11/10/runloop_(二)/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -349,7 +349,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=苹果指纹解锁&url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html&via=daisyNew" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=RunLoop (二)&url=http://yoursite.com//2015/11/10/runloop_(二)/index.html&via=daisyNew" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -358,7 +358,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2015/11/10/runloop_(二)/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -367,7 +367,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2016/08/14/苹果指纹解锁/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2015/11/10/runloop_(二)/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -391,92 +391,101 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>指纹解锁<br>苹果的指纹解锁出来好一阵子了，但是一直没用上，所以没有研究，今天偶遇一篇关于这个的文章，所以记录一下，便于以后使用。</p>
-<p>实现过程如下：</p>
-<h2 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h2><pre><code class="objc"><span class="meta">#import<span class="meta-string">&lt;LocalAuthentication/LocalAuthentication.h&gt;</span></span>
-</code></pre>
-<h2 id="在程序启动时，进行设置"><a href="#在程序启动时，进行设置" class="headerlink" title="在程序启动时，进行设置"></a>在程序启动时，进行设置</h2><p>因为指纹解锁只在iOS 8.0以上有，所以当设备满足此需求时，就开启指纹锁，否则不需要开启。</p>
-<pre><code class="objc"><span class="keyword">if</span> ([<span class="built_in">UIDevice</span> currentDevice].systemVersion.floatValue &lt; <span class="number">8.0</span>) {
-    <span class="keyword">return</span>;
-}
-</code></pre>
-<h2 id="具体方法实现如下："><a href="#具体方法实现如下：" class="headerlink" title="具体方法实现如下："></a>具体方法实现如下：</h2><pre><code class="objc">- (<span class="keyword">void</span>)evaluateAuthenticate{
-    <span class="comment">//创建LAContext</span>
-    LAContext *context = [[LAContext alloc]init];
-    <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;
-    <span class="built_in">NSString</span> *result  = <span class="string">@"请验证指纹！"</span>;
-    <span class="comment">//首先使用canevatePolicy 判断设备状态</span>
-    <span class="keyword">if</span> ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&amp;error]) {
-        <span class="comment">//支持指纹验证</span>
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:result reply:^(<span class="built_in">BOOL</span> success, <span class="built_in">NSError</span> * _Nullable error) { 
-            <span class="keyword">if</span> (success) {
-             <span class="comment">//成功后的处理办法   </span>
-            }<span class="keyword">else</span>{
-                <span class="keyword">switch</span> (error.code) {
-                    <span class="keyword">case</span> LAErrorSystemCancel:
-                    {
-                        <span class="comment">//系统取消授权，如其他app切入</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorUserCancel:
-                    {
-                        <span class="comment">//用户取消验证Touch ID</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorAuthenticationFailed:
-                    {
-                        <span class="comment">//授权失败</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorPasscodeNotSet:
-                    {
-                        <span class="comment">//系统未设置密码</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorTouchIDNotAvailable:
-                    {
-                        <span class="comment">//设备Touch ID 不可用，例如未打开</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorTouchIDNotEnrolled:
-                    {
-                        <span class="comment">//设备Touch ID 不可用，用户未录入</span>
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">case</span> LAErrorUserFallback:
-                    {
-                        [[<span class="built_in">NSOperationQueue</span> mainQueue] addOperationWithBlock:^{
-                          <span class="comment">//用户选择输入密码，切换主线程处理</span>
-                        }];
-                        <span class="keyword">break</span>;
-                    }
-                    <span class="keyword">default</span>:
-                    {
-                        [[<span class="built_in">NSOperationQueue</span> mainQueue] addOperationWithBlock:^{
-                            <span class="comment">//其他情况，切换主线程处理</span>
-                        }];
-                        <span class="keyword">break</span>;
-                    }
-                }
-            }
-        }];
-    }<span class="keyword">else</span>{
-        <span class="comment">//不支持指纹识别</span>
-        <span class="keyword">switch</span> (error.code) {
-            <span class="keyword">case</span> LAErrorTouchIDNotEnrolled:
-            {
-                <span class="keyword">break</span>;
-            }
-            <span class="keyword">case</span> LAErrorPasscodeNotSet:
-            {
-                <span class="keyword">break</span>;
-            }
-            <span class="keyword">default</span>:
-            {
-                <span class="keyword">break</span>;
-            }
-        }
+        <p>之前有篇博客写了RunLoop的一些理论知识，这篇研究一下RunLoop在实践中的使用。</p>
+<h2 id="什么时候使用RunLoop"><a href="#什么时候使用RunLoop" class="headerlink" title="什么时候使用RunLoop"></a>什么时候使用RunLoop</h2><p>Cocoa和Carbon程序提供了代码运行主程序的循环并自动启动run loop。所以，当在为你的程序创建辅助线程的时候，你才需要显式运行一个run loop。</p>
+<p>对于辅助线程，你需要判断一个run loop是否是必须的。如果是必须的，那么你要自己配置并启动它。你不需要在任何情况下都去启动一个线程的run loop。比如，你使用线程来处理一个预先定义的长时间运行的任务时，你应该避免启动run loop。Run loop在你要和线程有更多的交互时才需要，比如以下情况：</p>
+<ul>
+<li>使用端口或自定义输入源来和其他线程通信</li>
+<li>使用线程的定时器</li>
+<li>Cocoa中使用任何performSelector…的方法</li>
+<li>使线程周期性工作</li>
+</ul>
+<p>如果你决定在程序中使用run loop，那么它的配置和启动都很简单。和所有线程编程一样，你需要计划好在辅助线程退出线程的情形。让线程自然退出往往比强制关闭它更好。</p>
+<h2 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewDidLoad&#123;</div><div class="line">[superviewDidLoad];</div><div class="line">[<span class="built_in">NSThreaddetachNewThreadSelector</span>: <span class="keyword">@selector</span>(newThreadProcess)</div><div class="line">                         toTarget: <span class="keyword">self</span></div><div class="line">                       withObject: <span class="literal">nil</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="objc">- (<span class="keyword">void</span>)newThreadProcess{
+  <span class="keyword">@autoreleasepool</span> {
+    <span class="comment">////获得当前thread的Runloop</span>
+    <span class="built_in">NSRunLoop</span>* myRunLoop = [<span class="built_in">NSRunLoop</span> currentRunLoop];
+    <span class="comment">//设置Run loop observer的运行环境 </span>
+    <span class="built_in">CFRunLoopObserverContext</span> context = {<span class="number">0</span>,<span class="keyword">self</span>,<span class="literal">NULL</span>,<span class="literal">NULL</span>,<span class="literal">NULL</span>};
+    <span class="comment">//创建Run loop observer对象 </span>
+    <span class="comment">//第一个参数用于分配observer对象的内存 </span>
+    <span class="comment">//第二个参数用以设置observer所要关注的事件，详见回调函数myRunLoopObserver中注释 </span>
+    <span class="comment">//第三个参数用于标识该observer是在第一次进入runloop时执行还是每次进入run loop处理时均执行 </span>
+    <span class="comment">//第四个参数用于设置该observer的优先级 </span>
+    <span class="comment">//第五个参数用于设置该observer的回调函数 </span>
+    <span class="comment">//第六个参数用于设置该observer的运行环境 </span>
+    <span class="built_in">CFRunLoopObserverRef</span> observer = <span class="built_in">CFRunLoopObserverCreate</span>(kCFAllocatorDefault,kCFRunLoopAllActivities, <span class="literal">YES</span>, <span class="number">0</span>, &amp;myRunLoopObserver, &amp;context);
+    <span class="keyword">if</span>(observer){
+        <span class="comment">//将Cocoa的NSRunLoop类型转换成CoreFoundation的CFRunLoopRef类型 </span>
+        <span class="built_in">CFRunLoopRef</span> cfRunLoop = [myRunLoop getCFRunLoop];
+        <span class="comment">//将新建的observer加入到当前thread的runloop </span>
+        <span class="built_in">CFRunLoopAddObserver</span>(cfRunLoop, observer, kCFRunLoopDefaultMode);
     }
+    [<span class="built_in">NSTimerscheduledTimerWithTimeInterval</span>: <span class="number">1</span>
+                                    target: <span class="keyword">self</span>
+                                  selector: <span class="keyword">@selector</span>(timerProcess)
+                                  userInfo: <span class="literal">nil</span>
+                                   repeats: <span class="literal">YES</span>];
+    <span class="built_in">NSInteger</span> loopCount = <span class="number">2</span>;
+    <span class="keyword">do</span>{
+        <span class="comment">//启动当前thread的loop直到所指定的时间到达，在loop运行时，runloop会处理所有来自与该run loop联系的inputsource的数据 </span>
+        <span class="comment">//对于本例与当前run loop联系的inputsource只有一个Timer类型的source。 </span>
+        <span class="comment">//该Timer每隔1秒发送触发事件给runloop，run loop检测到该事件时会调用相应的处理方法。 </span>
+        <span class="comment">//由于在run loop添加了observer且设置observer对所有的runloop行为都感兴趣。  </span>
+        <span class="comment">//当调用runUnitDate方法时，observer检测到runloop启动并进入循环，observer会调用其回调函数，第二个参数所传递的行为是kCFRunLoopEntry。 </span>
+        <span class="comment">//observer检测到runloop的其它行为并调用回调函数的操作与上面的描述相类似。 </span>
+        [myRunLoop runUntilDate:[<span class="built_in">NSDate</span> dateWithTimeIntervalSinceNow:<span class="number">5.0</span>]];
+        <span class="comment">//当run loop的运行时间到达时，会退出当前的runloop。observer同样会检测到runloop的退出行为并调用其回调函数，第二个参数所传递的行为是kCFRunLoopExit。</span>
+        loopCount--;
+    }<span class="keyword">while</span> (loopCount);
+  }
+}
+<span class="keyword">void</span> myRunLoopObserver(<span class="built_in">CFRunLoopObserverRef</span> observer,<span class="built_in">CFRunLoopActivity</span> activity,<span class="keyword">void</span> *info){
+<span class="keyword">switch</span> (activity) { 
+        <span class="comment">//The entrance of the run loop, beforeentering the event processing loop.  </span>
+        <span class="comment">//This activity occurs once for each callto CFRunLoopRun and CFRunLoopRunInMode </span>
+    <span class="keyword">case</span> kCFRunLoopEntry: 
+        <span class="built_in">NSLog</span>(<span class="string">@"run loop entry"</span>); 
+        <span class="keyword">break</span>; 
+        <span class="comment">//Inside the event processing loop beforeany timers are processed </span>
+    <span class="keyword">case</span> kCFRunLoopBeforeTimers: 
+        <span class="built_in">NSLog</span>(<span class="string">@"run loop before timers"</span>); 
+        <span class="keyword">break</span>;
+        <span class="comment">//Inside the event processing loop beforeany sources are processed </span>
+    <span class="keyword">case</span> kCFRunLoopBeforeSources: 
+        <span class="built_in">NSLog</span>(<span class="string">@"run loop before sources"</span>); 
+        <span class="keyword">break</span>; 
+        <span class="comment">//Inside the event processing loop beforethe run loop sleeps, waiting for a source or timer to fire.  </span>
+        <span class="comment">//This activity does not occur ifCFRunLoopRunInMode is called with a timeout of 0 seconds.  </span>
+        <span class="comment">//It also does not occur in a particulariteration of the event processing loop if a version 0 source fires </span>
+    <span class="keyword">case</span> kCFRunLoopBeforeWaiting: 
+        <span class="built_in">NSLog</span>(<span class="string">@"run loop before waiting"</span>); 
+        <span class="keyword">break</span>; 
+        <span class="comment">//Inside the event processing loop afterthe run loop wakes up, but before processing the event that woke it up.  </span>
+        <span class="comment">//This activity occurs only if the run loopdid in fact go to sleep during the current loop </span>
+    <span class="keyword">case</span> kCFRunLoopAfterWaiting: 
+        <span class="built_in">NSLog</span>(<span class="string">@"run loop after waiting"</span>); 
+        <span class="keyword">break</span>; 
+        <span class="comment">//The exit of the run loop, after exitingthe event processing loop.  </span>
+        <span class="comment">//This activity occurs once for each callto CFRunLoopRun and CFRunLoopRunInMode </span>
+    <span class="keyword">case</span> kCFRunLoopExit: 
+        <span class="built_in">NSLog</span>(<span class="string">@"run loop exit"</span>); 
+        <span class="keyword">break</span>; 
+        <span class="comment">/*
+         A combination of all the precedingstages
+         case kCFRunLoopAllActivities:
+         break;
+         */</span> 
+    <span class="keyword">default</span>: 
+        <span class="keyword">break</span>; 
+  } 
+}
+- (<span class="keyword">void</span>)timerProcess{
+<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">5</span>; i++) {       
+    <span class="built_in">NSLog</span>(<span class="string">@"In timerProcess count = %d."</span>, i);
+    sleep(<span class="number">1</span>);
+  }
 }
 </code></pre>
 
@@ -502,7 +511,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2016/09/14/html_初探/" id="post_nav-newer" class="prev-content">
+        <a href="/2015/12/01/oc_面试基础（一）/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -516,7 +525,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2016/06/10/app_内直接下载应用，不用跳转到app_store/" id="post_nav-older" class="next-content">
+        <a href="/2015/11/01/runtime（后期补充）/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
