@@ -238,10 +238,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             动态获取WebViewCell的高度WebView上个月接手了一个资讯类项目，详情页中部嵌入了一个webViewCell(即，tableViewCell的contentView铺满了WebView)。
-接手的时候该页已经完成。之前的开发人员逻辑是：在webView的代理方法：-(void)webViewDidFinishLoad:(UIWebView *)webView中获取webView的高度，然后赋值刷新表。
-但是，这样会出现webview高度加载不正确，经常会有webView看起来被截断的问题。于是换成KVO来监听webView.scrollView的ContentSize，动态改变webView的高度。具体实现如下：
-webView初始化的时候添加监听
-1[self.web...
+接手的时候该页已经完成。之前的开发人员逻辑是：在webView的代理方法：-(void)webViewDidFinishLoad:(UIW...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -303,9 +300,7 @@ webView初始化的时候添加监听
 导入头文件
 1
 #import 在程序启动时，进行设置
-因为指纹解锁只在iOS 8.0以上有，所以当设备满足此需求时，就开启指纹锁，否则不需要开启。
-123if ([UIDevice currentDevice].systemVersion.floatValue &lt; 8.0) {    return;}具体方法实现如下：
-123456...
+因...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -368,11 +363,7 @@ OC 即Objective-C，他是在C的基础上，增加了面向对象的特性。
 C是面向过程的语言，关注的是解决问题的步骤，而OC是面向对象的，关注的是设计实现所需功能的类。
 面向对象具有三个原则：封装、继承和多态。
 封装
-封装是把过程和数据包围起来（即函数和数据结构，函数是行为，数据结构是描述），有限制的对数据的访问。
-封装保证了模块具有很好的独立性，修改维护比较容易。
-继承
-OC中只支持单继承。A类继承了B类，则A类为子类，B类为父类。A类继承B类之后，会继承B类的所有方法和实例变量，并且A类可以增加自己的方法，或者通过重写B类的方法，可以对B类方法进行修改。
-在正确的继承方式中，父类应当扮演的是底层...
+封装是把过程和数据包围起来（即函数和数据结构...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -430,7 +421,7 @@ OC中只支持单继承。A类继承了B类，则A类为子类，B类为父类�
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             OC 经验总结关于NSString拼接1、保留两位小数：
-123456789
+1
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -489,9 +480,7 @@ OC中只支持单继承。A类继承了B类，则A类为子类，B类为父类�
         
             HTML 高级HTML
 HTML Object 元素&lt; object&gt; 的作用是支持 HTML 助手（插件）。
-HTML 助手（插件）辅助应用程序（helper application）是可由浏览器启动的程序。辅助应用程序也称为插件。
-辅助程序可用于播放音频和视频（以及其他）。辅助程序是使用 标签来加载的。
-使用辅助程序播放视频和音频的一个优势是，您能够允许用户来控制部分...
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -553,7 +542,7 @@ HTML 助手（插件）辅助应用程序（helper application）是可由浏览
 通过使用 href 属性 - 创建指向另一个文档的链接通过使用 name 属性 - 创建文档内的书签
 href 属性规定链接的目标。
 开始标签和结束标签之间的文字被作为超级链接来显示。
-实例：&lt; a href=”http://www.w3school.com.cn/&quot;&g...
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -610,13 +599,7 @@ href 属性规定链接的目标。
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            HTML 基础HTML标题是通过&lt; h1 &gt; - &lt; h6 &gt;标签来实现的。例如：
-&lt; h1&gt;我是标题111
-&lt; h2&gt;我是标题222
-&lt; h3&gt;我是标题333
-
-h1 - h6 的区别在于显示出的标题字体的大小不同。应该将 h1 用作主标题（最重要的），其后是 h2（次重要的），再其次是 h3，以此类推。
-
+            HTML 基础HTML标题是通过&lt; h1 &gt; - &lt; h6 &g...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -674,8 +657,7 @@ h1 - h6 的区别在于显示出的标题字体的大小不同。应该将 h1 �
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             HTML 初探仅仅会iOS开发已经不能满足自己对自己的要求了，有很多领域都想探索一番。目前打算学习前端开发。今天先从HTML开始。
-HTML是什么？HTML是超文本标记语言 (Hyper Text Markup Language)，它是一种标记语言（即一套标记标签），如下：
-1234
+HTML是什么？HTML是超文本标记语言 (Hyper Text Markup Language)，它是一种标记语言...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -733,8 +715,7 @@ HTML是什么？HTML是超文本标记语言 (Hyper Text Markup Language)，它�
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             RunLoop (二)之前有篇博客写了RunLoop的一些理论知识，这篇研究一下RunLoop在实践中的使用。
-什么时候使用RunLoopCocoa和Carbon程序提供了代码运行主程序的循环并自动启动run loop。所以，当在为你的程序创建辅助线程的时候，你才需要显式运行一个run loop。
-对于辅助线程，你需要判断一个run loop是否是必须的。如果是必须的，那么你要自己配置并启动它。你不需要在任何情况下都去启动一个线程的run loop。比如，你使用线程来处理一个预先定义的长时间运行的任务时，你应该避免启动run loop。Run loop在你要和线程有更多的交互时才需...
+什么时候使用RunLoopCocoa和Carbon程序提供了代码运行主程序的循环并自动启动...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -791,9 +772,7 @@ HTML是什么？HTML是超文本标记语言 (Hyper Text Markup Language)，它�
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Runtime（后期补充）Runtime 是什么？OC是一门动态语言，即运行时语言，它会尽可能的把编译时候的事情压到运行的时候去做。这样的话，我们可以在运行的时候改变代码的效果，比如交换方法等，为开发提供了很大的灵活性。OC就是通过Runtime来实现这一动态性的.
-Runtime 消息机制举个OC中调用方法的栗子：
-
+            Runtime（后期补充）Runtime 是什么？OC是一门动态语言，即运行时语言，它会尽可能的把编译时候的事情压到运行的时候去做。这样的话，我们可以在运行的时候改变代码的效果，比如交换方法等，为开发提...
         
         &nbsp;&nbsp;&nbsp;
         <span>

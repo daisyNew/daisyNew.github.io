@@ -238,8 +238,7 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             RunLoop (二)之前有篇博客写了RunLoop的一些理论知识，这篇研究一下RunLoop在实践中的使用。
-什么时候使用RunLoopCocoa和Carbon程序提供了代码运行主程序的循环并自动启动run loop。所以，当在为你的程序创建辅助线程的时候，你才需要显式运行一个run loop。
-对于辅助线程，你需要判断一个run loop是否是必须的。如果是必须的，那么你要自己配置并启动它。你不需要在任何情况下都去启动一个线程的run loop。比如，你使用线程来处理一个预先定义的长时间运行的任务时，你应该避免启动run loop。Run loop在你要和线程有更多的交互时才需...
+什么时候使用RunLoopCocoa和Carbon程序提供了代码运行主程序的循环并自动启动...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -296,9 +295,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Runtime（后期补充）Runtime 是什么？OC是一门动态语言，即运行时语言，它会尽可能的把编译时候的事情压到运行的时候去做。这样的话，我们可以在运行的时候改变代码的效果，比如交换方法等，为开发提供了很大的灵活性。OC就是通过Runtime来实现这一动态性的.
-Runtime 消息机制举个OC中调用方法的栗子：
-
+            Runtime（后期补充）Runtime 是什么？OC是一门动态语言，即运行时语言，它会尽可能的把编译时候的事情压到运行的时候去做。这样的话，我们可以在运行的时候改变代码的效果，比如交换方法等，为开发提...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -356,7 +353,7 @@ Runtime 消息机制举个OC中调用方法的栗子：
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             获取通讯录中联系人的所有属性ABAddressBookRef
-1234567891011
+123
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -414,7 +411,6 @@ Runtime 消息机制举个OC中调用方法的栗子：
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             RunLoop（一）RunLoop 概念一个run loop是一个事件处理的循环，用来不停的调度工作以及处理输入事件。使用run loop的目的是让你的线程在有工作的时候忙于工作，而没工作的时候处于休眠状态。如下图所示：
-OSX/iOS 系统中，提供了两个这样的对象：NSRunLoop和CFRunLoopRef。CFRunLoopRef 是在 CoreFoundation 框架内的，它提供了纯 C 函数的 API，所有这些 API 都是线程安全的。NSRunLoop 是基于 CFRunLoopRef 的封装，提供了面向对象的 API，但是这些 API 不是线程安全的。
 
         
         &nbsp;&nbsp;&nbsp;
@@ -474,9 +470,7 @@ OSX/iOS 系统中，提供了两个这样的对象：NSRunLoop和CFRunLoopRef。
         
             判断字符串的长度以下判断字符串长度的方法，类似于微博的判断方法，即一个汉字为一个字符，两个英文字母为一个字符，两个数字为一个字符，详见方法：
 -(int)lengthFromWord:(NSString *)word{
-  int i,n=[s length],l=0,a=0,b=0;
-  unichar c;
-  f...
+  
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -533,8 +527,7 @@ OSX/iOS 系统中，提供了两个这样的对象：NSRunLoop和CFRunLoopRef。
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Cocoapods的安装和使用什么是CocoapodsCocoapods是管理第三方库的一个工具，使用它可以节省开发时配置第三方库的时间，提高工作效率。这篇博客介绍一下如何安装Cocoapods。
-Cocoapods原理CocoaPods的原理是将所有的依赖库都放到另一个名为Pods的项目中，然后让主项目依赖Pods项目，这样，源码管理工作都从主项目移到了Pods项目中。Pods项目最终会...
+            Cocoapods的安装和使用什么是CocoapodsCocoapods是管理第三方库的一个工具，使用它可以节省开发时配置第三方库的时间，提高工作效率。这篇博客介绍一下如何安装Cocoapo...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -592,9 +585,6 @@ Cocoapods原理CocoaPods的原理是将所有的依赖库都放到另一个名�
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             App 内直接下载应用，不用跳转到App Store一般情况下，我们要下载某一个应用时，都需要先跳转到app store中对应应用的页面，然后再进行下载。iOS 6之后，苹果提出，也可以直接在app中调起下载页面进行下载，不需要再跳转了，这对于浏览器应用来说可谓是一个福利啊！下面我们来看看这个功能怎么实现：
-主要涉及到一个类：SKStoreProductViewController,这个类继承自UIViewController，基本用法与UIViewController相同。话不多说，请看代码：
-1、首先需要导入库
-
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -652,9 +642,7 @@ Cocoapods原理CocoaPods的原理是将所有的依赖库都放到另一个名�
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             React Native开始环境需求：OS XHomeBrewNode.js 4.0或更高版本
-watchman,推荐安装，否则可能会遇到Node.js监视文件系统的Bug,命令行输入 brew install watchman就可以安装。
-iOS开发必备：Xcode 7.0或更高版本
-快速开始：配置资源...
+watchman,推荐安装，否则可能会遇到Node.js监视文件系统的Bug,命令行输入 brew instal...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -713,8 +701,7 @@ iOS开发必备：Xcode 7.0或更高版本
         
             更新CocoapodsCocoapods 更新过程：
 sudo gem update –system 先更新gem资源。国内的话需要切换资源。
-gem sources –remove https://rubygems.org/
-gem sources -a https://ruby....
+gem sources ...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -773,8 +760,7 @@ gem sources -a https://ruby....
         
             微信小程序
 最近微信小程序大热，我又从一名iOS开发转战到小程序啦，真成了社会主义的一板砖，哪里需要哪里搬！废话不多说，一下是小程序的一些介绍以及开发遇坑的解决办法。
-简介微信小程序,是一种无需下载，扫一扫或者搜一搜就可以打开的应用，充分体现了微信”触手可及、用完即走”的理念。 
-小程序与A...
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
