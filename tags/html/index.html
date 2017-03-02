@@ -10,7 +10,7 @@
     
     <title>
         
-            React Native开始 | 
+            标签: html | 
         
         你若盛开，清风自来
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="React Native开始 | 你若盛开，清风自来">
+    <meta property="og:title" content="标签: html | 你若盛开，清风自来">
     <meta property="og:description" content="null">
     
 
@@ -208,236 +208,93 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
+    <!-- Pin on top -->
+    
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#环境需求："><span class="post-toc-number">1.</span> <span class="post-toc-text">环境需求：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速开始："><span class="post-toc-number">2.</span> <span class="post-toc-text">快速开始：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置资源"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">配置资源</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建新项目"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">创建新项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改工程"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">修改工程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为已有的React-Native工程添加Android支持："><span class="post-toc-number">2.4.</span> <span class="post-toc-text">为已有的React Native工程添加Android支持：</span></a></li></ol></li></ol>
-
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+        
+            <!-- Paradox Thumbnail -->
+            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script>
-    var randomNum = Math.floor(Math.random() * 19 + 1);
+        
+    
 
-    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/02/HTML-5/">HTML 5</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            HTML 5 视频
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/02/HTML-5/" target="_self">继续阅读</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="daisyNew's avatar">
+            </div>
+            <div>
+                <strong>daisyNew</strong>
+                <span>3月 02, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+        
+        
+        
+    
+
+    
+
+    
+        <script>
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
+
+        locatePost = locatePost.next();
+    }
 </script>
 
-        
-    
-            <p class="article-headline-p">
-                React Native开始
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>daisyNew</strong>
-        <span>10月 14, 2016</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-        
-            <!-- Busuanzi Views -->
-            <a class="post_share-link" href="#">
-                <li class="mdl-menu__item">
-                    <span id="busuanzi_container_page_pv">
-                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
-                    </span>
-                </li>
-            </a>
-        
-    
-
-    <!-- Share Weibo -->
-    
-
-    <!-- Share Twitter -->
-    
-
-    <!-- Share Facebook -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h3 id="环境需求："><a href="#环境需求：" class="headerlink" title="环境需求："></a>环境需求：</h3><p>OS X<br>HomeBrew<br>Node.js 4.0或更高版本</p>
-<p>watchman,推荐安装，否则可能会遇到Node.js监视文件系统的Bug,命令行输入 brew install watchman就可以安装。</p>
-<p>iOS开发必备：Xcode 7.0或更高版本</p>
-<h3 id="快速开始："><a href="#快速开始：" class="headerlink" title="快速开始："></a>快速开始：</h3><h4 id="配置资源"><a href="#配置资源" class="headerlink" title="配置资源"></a>配置资源</h4><p>由于网络原因，react native命令行从npm官方源托代码时可能会遇上麻烦，因此，请先将npm仓库源替换为国内镜像。使用如下命令：</p>
-<ul>
-<li>npm config set registry <a href="https://registry.npm.taoba.org" target="_blank" rel="external">https://registry.npm.taoba.org</a> –global</li>
-<li>npm config set disturl <a href="https://npm.taobao.org/dist" target="_blank" rel="external">https://npm.taobao.org/dist</a> –global</li>
-</ul>
-<h4 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h4><ul>
-<li>sudo npm install -g react-native-cli 需要输入root密码<br>react-native init AwesomeProject</li>
-</ul>
-<p>这样一个新项目就创建好了，要运行iOS应用，执行命令：</p>
-<ul>
-<li>cd AwesomeProject</li>
-</ul>
-<p>你会看到，已经存在一个AwesomeProject的文件夹，里边包含android、ios、node_modules三个文件夹和一些文件。打开ios文件夹，用Xcode打开工程文件即可。</p>
-<h4 id="修改工程"><a href="#修改工程" class="headerlink" title="修改工程"></a>修改工程</h4><p>使用你喜欢的编辑器打开index.ios.js,随便随便改上几行，在ios Emulator中按下command-R就可以刷新app并看到最新修改了。</p>
-<h4 id="为已有的React-Native工程添加Android支持："><a href="#为已有的React-Native工程添加Android支持：" class="headerlink" title="为已有的React Native工程添加Android支持："></a>为已有的React Native工程添加Android支持：</h4><p>打开package.json文件，在dependencies项中找到react-native,并将其后的版本号修改为最新版本。</p>
-<ul>
-<li>npm install react-native android</li>
-</ul>
-
-    
-
     
 </div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-
-
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2016/10/16/html_高级/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2016/09/20/html_基础（二）/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
 
 
                     
@@ -629,14 +486,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
-
-                    
-                        <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 

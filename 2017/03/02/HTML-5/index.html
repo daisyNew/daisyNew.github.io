@@ -10,7 +10,7 @@
     
     <title>
         
-            React Native开始 | 
+            HTML 5 | 
         
         你若盛开，清风自来
     </title>
@@ -27,7 +27,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="daisyNew">
     <meta name="description" content="null">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,html">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -48,9 +48,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="React Native开始 | 你若盛开，清风自来">
+    <meta property="og:title" content="HTML 5 | 你若盛开，清风自来">
     <meta property="og:description" content="null">
-    
+    <meta property="og:article:tag" content="html"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -234,7 +234,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#环境需求："><span class="post-toc-number">1.</span> <span class="post-toc-text">环境需求：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#快速开始："><span class="post-toc-number">2.</span> <span class="post-toc-text">快速开始：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置资源"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">配置资源</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建新项目"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">创建新项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改工程"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">修改工程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为已有的React-Native工程添加Android支持："><span class="post-toc-number">2.4.</span> <span class="post-toc-text">为已有的React Native工程添加Android支持：</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTML-5-视频"><span class="post-toc-number">1.</span> <span class="post-toc-text">HTML 5 视频</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#视频格式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">视频格式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#h5中设置视频"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">h5中设置视频</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#h5-音频"><span class="post-toc-number">2.</span> <span class="post-toc-text">h5 音频</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#音频格式"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">音频格式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#h5中设置音频"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">h5中设置音频</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -270,7 +270,7 @@
         
     
             <p class="article-headline-p">
-                React Native开始
+                HTML 5
             </p>
         </div>
 
@@ -289,7 +289,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>daisyNew</strong>
-        <span>10月 14, 2016</span>
+        <span>3月 02, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -313,7 +313,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/html/">html</a>
     </ul>
     
 
@@ -367,27 +367,103 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="环境需求："><a href="#环境需求：" class="headerlink" title="环境需求："></a>环境需求：</h3><p>OS X<br>HomeBrew<br>Node.js 4.0或更高版本</p>
-<p>watchman,推荐安装，否则可能会遇到Node.js监视文件系统的Bug,命令行输入 brew install watchman就可以安装。</p>
-<p>iOS开发必备：Xcode 7.0或更高版本</p>
-<h3 id="快速开始："><a href="#快速开始：" class="headerlink" title="快速开始："></a>快速开始：</h3><h4 id="配置资源"><a href="#配置资源" class="headerlink" title="配置资源"></a>配置资源</h4><p>由于网络原因，react native命令行从npm官方源托代码时可能会遇上麻烦，因此，请先将npm仓库源替换为国内镜像。使用如下命令：</p>
-<ul>
-<li>npm config set registry <a href="https://registry.npm.taoba.org" target="_blank" rel="external">https://registry.npm.taoba.org</a> –global</li>
-<li>npm config set disturl <a href="https://npm.taobao.org/dist" target="_blank" rel="external">https://npm.taobao.org/dist</a> –global</li>
-</ul>
-<h4 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h4><ul>
-<li>sudo npm install -g react-native-cli 需要输入root密码<br>react-native init AwesomeProject</li>
-</ul>
-<p>这样一个新项目就创建好了，要运行iOS应用，执行命令：</p>
-<ul>
-<li>cd AwesomeProject</li>
-</ul>
-<p>你会看到，已经存在一个AwesomeProject的文件夹，里边包含android、ios、node_modules三个文件夹和一些文件。打开ios文件夹，用Xcode打开工程文件即可。</p>
-<h4 id="修改工程"><a href="#修改工程" class="headerlink" title="修改工程"></a>修改工程</h4><p>使用你喜欢的编辑器打开index.ios.js,随便随便改上几行，在ios Emulator中按下command-R就可以刷新app并看到最新修改了。</p>
-<h4 id="为已有的React-Native工程添加Android支持："><a href="#为已有的React-Native工程添加Android支持：" class="headerlink" title="为已有的React Native工程添加Android支持："></a>为已有的React Native工程添加Android支持：</h4><p>打开package.json文件，在dependencies项中找到react-native,并将其后的版本号修改为最新版本。</p>
-<ul>
-<li>npm install react-native android</li>
-</ul>
+        <h3 id="HTML-5-视频"><a href="#HTML-5-视频" class="headerlink" title="HTML 5 视频"></a>HTML 5 视频</h3><p>直到现在，仍然不存在一项旨在网页上显示视频的标准。今天，大多数视频是通过插件（比如 Flash）来显示的。然而，并非所有浏览器都拥有同样的插件。</p>
+<p>HTML5 规定了一种通过 video 元素来包含视频的标准方法。</p>
+<h4 id="视频格式"><a href="#视频格式" class="headerlink" title="视频格式"></a>视频格式</h4><p>当前，video 元素支持三种视频格式：</p>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>IE</th>
+<th>Firefox</th>
+<th>Opera</th>
+<th>Chrome</th>
+<th>Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ogg</td>
+<td>No</td>
+<td>3.5+</td>
+<td>10.5+</td>
+<td>5.0+</td>
+<td>No</td>
+</tr>
+<tr>
+<td>MPEG4</td>
+<td>9.0+</td>
+<td>No</td>
+<td>No</td>
+<td>5.0+</td>
+<td>3.0+</td>
+</tr>
+<tr>
+<td>WebM</td>
+<td>No</td>
+<td>4.0+</td>
+<td>10.6+</td>
+<td>6.0+</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Ogg = 带有 Theora 视频编码和 Vorbis 音频编码的 Ogg 文件<br>MPEG4 = 带有 H.264 视频编码和 AAC 音频编码的 MPEG 4 文件<br>WebM = 带有 VP8 视频编码和 Vorbis 音频编码的 WebM 文件</p>
+<h4 id="h5中设置视频"><a href="#h5中设置视频" class="headerlink" title="h5中设置视频"></a>h5中设置视频</h4><pre><code class="html"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"movie.ogg"</span> <span class="attr">width</span>=<span class="string">"320"</span> <span class="attr">height</span>=<span class="string">"240"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span>
+Your browser does not support the video tag.
+<span class="tag">&lt;/<span class="name">video</span>&gt;</span>
+</code></pre>
+<p>如果有的浏览器不支持video标签，就会显示标签对之间的那句话。</p>
+<p>此外，video 元素允许多个 source 元素。source 元素可以链接不同的视频文件。浏览器将使用第一个可识别的格式：</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">video</span> <span class="attr">width</span>=<span class="string">"320"</span> <span class="attr">height</span>=<span class="string">"240"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"movie.ogg"</span> <span class="attr">type</span>=<span class="string">"video/ogg"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"movie.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span>
+Your browser does not support the video tag.
+<span class="tag">&lt;/<span class="name">video</span>&gt;</span>
+</code></pre>
+<h3 id="h5-音频"><a href="#h5-音频" class="headerlink" title="h5 音频"></a>h5 音频</h3><h4 id="音频格式"><a href="#音频格式" class="headerlink" title="音频格式"></a>音频格式</h4><p>当前，audio 元素支持三种音频格式：</p>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>IE 9</th>
+<th>Firefox 3.5</th>
+<th>Opera 10.5</th>
+<th>Chrome 3.0</th>
+<th>Safari 3.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ogg Vorbis</td>
+<td></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>MP3</td>
+<td>√</td>
+<td></td>
+<td></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>Wav</td>
+<td></td>
+<td>√</td>
+<td>√</td>
+<td></td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<h4 id="h5中设置音频"><a href="#h5中设置音频" class="headerlink" title="h5中设置音频"></a>h5中设置音频</h4><pre><code class="html"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"song.ogg"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span>
+Your browser does not support the audio tag.
+<span class="tag">&lt;/<span class="name">audio</span>&gt;</span>
+</code></pre>
 
     
 
@@ -411,21 +487,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2016/10/16/html_高级/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/09/20/html_基础（二）/" id="post_nav-older" class="next-content">
+        <a href="/2017/02/24/快速完成夜间模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
