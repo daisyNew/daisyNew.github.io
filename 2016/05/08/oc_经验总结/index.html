@@ -234,7 +234,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于NSString拼接"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于NSString拼接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置虚线边框"><span class="post-toc-number">2.</span> <span class="post-toc-text">设置虚线边框</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于NSString拼接"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于NSString拼接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置虚线边框"><span class="post-toc-number">2.</span> <span class="post-toc-text">设置虚线边框</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图片拉伸"><span class="post-toc-number">3.</span> <span class="post-toc-text">图片拉伸</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -386,6 +386,14 @@ borderLayer.fillColor = [<span class="built_in">UIColor</span> clearColor].CGCol
 borderLayer.strokeColor = [<span class="built_in">UIColor</span> getColor:<span class="string">@"b6b6b6"</span>].CGColor;
 [_btnImage.layer addSublayer:borderLayer];
 </code></pre>
+<h2 id="图片拉伸"><a href="#图片拉伸" class="headerlink" title="图片拉伸"></a>图片拉伸</h2><pre><code class="objc"><span class="built_in">CGFloat</span> top = <span class="number">25</span>; <span class="comment">// 顶端盖高度  </span>
+<span class="built_in">CGFloat</span> bottom = <span class="number">25</span> ; <span class="comment">// 底端盖高度  </span>
+<span class="built_in">CGFloat</span> left = <span class="number">10</span>; <span class="comment">// 左端盖宽度  </span>
+<span class="built_in">CGFloat</span> right = <span class="number">10</span>; <span class="comment">// 右端盖宽度  </span>
+<span class="built_in">UIEdgeInsets</span> insets = <span class="built_in">UIEdgeInsetsMake</span>(top, left, bottom, right);  
+<span class="comment">// 指定为拉伸模式，伸缩后重新赋值  </span>
+image = [image resizableImageWithCapInsets:insets resizingMode:<span class="built_in">UIImageResizingModeStretch</span>];
+</code></pre>
 
     
 
@@ -517,7 +525,7 @@ borderLayer.strokeColor = [<span class="built_in">UIColor</span> getColor:<span 
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/08/">八月 2015<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/08/">八月 2015<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -553,7 +561,7 @@ borderLayer.strokeColor = [<span class="built_in">UIColor</span> getColor:<span 
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">20</span>
+                <span class="sidebar-badge">21</span>
             </a>
         </li>
         
